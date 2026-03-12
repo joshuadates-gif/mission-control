@@ -8,6 +8,8 @@
 
 ## Context
 
+Josh was a 5th grade teacher for about 10 years.
+His wife taught anthropology and history at the high school and college levels.
 Josh currently works in real estate with his wife, mainly wholesaling, with some fix-and-flips and rentals.
 
 He wants to transition away from real estate and build a more meaningful, location-independent life for his family.
@@ -17,6 +19,11 @@ Current goals and themes:
 - create digital products, tools, systems, or communities
 - focus on families, homeschoolers, curiosity-driven learning, personal growth, and AI-enabled leverage
 - design a business ecosystem that supports worldschooling and travel
+- turn existing education and curiosity-driven expertise into digital assets and products
+
+Existing asset:
+- Josh recently published an ebook: Curiosity-Driven Classroom Using AI (hosted on SamCart)
+- The ebook has not yet been marketed and has not produced sales yet
 
 Underused strengths:
 - pattern synthesis across disciplines
