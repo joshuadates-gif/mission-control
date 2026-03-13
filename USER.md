@@ -34,10 +34,26 @@ Underused strengths:
 - storytelling around meaning and growth
 - visionary thinking
 - AI curiosity and experimentation
+- strong pattern recognition in people, situations, and opportunities
+- sensitivity to unspoken needs and desires
+- reflective storytelling from lived experience
+- synthesis that creates breakthroughs and 'aha' moments
 
 Communication preferences:
 - one-on-one
 - brief and conversational
+- prefers thoughtful, grounded, low-pressure communication over hype or urgency
+- responds better to 2-3 strong paths than too many options
+- prefers insight-led communication over loud hooks or pushy sales language
+- likes ideas with depth and breathing room, not shallow template language
+
+Decision/working style reference:
+- identifies with a 2/4 Splenic Projector profile and uses it as a map for how to decide, communicate, and create
+- does not make good decisions under pressure or on demand
+- prefers options to sit with rather than forced fast conclusions
+- if something feels off, that instinct should be respected even before it is fully explained
+- best ideas land when relaxed, not forcing an outcome
+- wants content/positioning to attract rather than chase
 
 Dislikes / friction:
 - admin work, paperwork, bookkeeping, data entry, logistics
