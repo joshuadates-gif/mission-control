@@ -20,6 +20,9 @@ Current goals and themes:
 - focus on families, homeschoolers, curiosity-driven learning, personal growth, and AI-enabled leverage
 - design a business ecosystem that supports worldschooling and travel
 - turn existing education and curiosity-driven expertise into digital assets and products
+- emphasize polymath-style, curiosity-led learning rather than traditional achievement-driven education
+- use AI to support learning as exploration, synthesis, and direct experience
+- avoid building primarily for the traditional school system
 
 Existing asset:
 - Josh recently published an ebook: Curiosity-Driven Classroom Using AI (hosted on SamCart)
