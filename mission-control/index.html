@@ -39,6 +39,28 @@
     h2 { font-size: 1.1rem; color: #f4f7fb; margin-bottom: 14px; }
     .subtle, .muted { color: var(--muted); }
     .mission { font-size: 1.05rem; max-width: 860px; }
+    .hero-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .countdown {
+      min-width: 250px;
+      background: rgba(241, 196, 15, 0.1);
+      border: 1px solid rgba(241, 196, 15, 0.25);
+      border-radius: 16px;
+      padding: 16px;
+      text-align: right;
+    }
+    .countdown .days {
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 800;
+      color: var(--yellow);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
     .grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 18px; }
     .card { padding: 20px; }
     .span-12 { grid-column: span 12; }
@@ -55,7 +77,7 @@
     .gray { background: rgba(127, 140, 141, 0.13); color: #c0c8cf; border-color: rgba(127, 140, 141, 0.28); }
     .blue { background: rgba(93, 173, 226, 0.12); color: var(--blue); border-color: rgba(93, 173, 226, 0.28); }
     .stat {
-      display: flex; align-items: baseline; justify-content: space-between; padding: 10px 0;
+      display: flex; align-items: baseline; justify-content: space-between; gap: 16px; padding: 10px 0;
       border-bottom: 1px solid rgba(255,255,255,0.06);
     }
     .stat:last-child { border-bottom: none; }
@@ -81,6 +103,7 @@
     @media (max-width: 900px) {
       .span-8, .span-6, .span-4 { grid-column: span 12; }
       .log-item { grid-template-columns: 1fr; }
+      .countdown { text-align: left; width: 100%; }
     }
   </style>
 </head>
@@ -89,128 +112,218 @@
   <div class="wrap">
     <section class="hero">
       <!-- HEADER DATA START -->
-      <div class="pill blue">Mission Control</div>
-      <div class="pill green">ONLINE</div>
-      <h1>Mission Control — Josh</h1>
-      <p class="subtle">Updated: <span id="updated-date">2026-03-13 00:09 UTC</span></p>
-      <p class="mission">Build a location-independent, AI-leveraged business ecosystem that supports Josh’s family freedom and worldschooling life through curiosity-driven learning.</p>
+      <div class="hero-top">
+        <div>
+          <div class="pill blue">Mission Control</div>
+          <div class="pill green">ONLINE</div>
+          <h1>Mission Control — Josh</h1>
+          <p class="subtle">Updated: <span id="updated-date">2026-03-13 01:13 UTC</span></p>
+          <p class="mission">Build a location-independent, AI-leveraged business ecosystem that supports Josh’s family freedom and worldschooling life through curiosity-driven, polymath-style learning.</p>
+        </div>
+        <div class="countdown">
+          <div class="days">17 DAYS</div>
+          <div><strong>TO FIRST PRODUCT DRAFT</strong></div>
+          <div class="small muted">Milestone date: 2026-03-30</div>
+        </div>
+      </div>
       <!-- HEADER DATA END -->
     </section>
+
     <section class="grid">
-      <article class="card span-6">
+      <article class="card span-4">
         <h2>My Status</h2>
-        <div class="stat"><span class="label">Current focus</span><strong>Choose the first business wedge and turn the existing ebook into a revenue asset</strong></div>
-        <div class="stat"><span class="label">Current blockers</span><strong>Need product positioning, budget cap, and prioritized project stack</strong></div>
-        <div class="stat"><span class="label">Decisions needed now</span><strong>Pick first product path, mission statement wording, and budget target</strong></div>
+        <!-- MY STATUS DATA START -->
+        <div class="stat"><span class="label">Current focus</span><strong>Turn the AI-Powered Curiosity Learning Kit into a sellable first offer</strong></div>
+        <div class="stat"><span class="label">Current blockers</span><strong>Need monthly target, packaging choice, pricing, and launch sequence</strong></div>
+        <div class="stat"><span class="label">Decisions needed now</span><strong>Set revenue target, finalize kit format, and choose launch price</strong></div>
+        <!-- MY STATUS DATA END -->
       </article>
-      <article class="card span-6">
+
+      <article class="card span-4">
+        <h2>Revenue Tracker</h2>
+        <!-- REVENUE TRACKER DATA START -->
+        <div class="stat"><span class="label">Monthly target</span><strong>ASK JOSH</strong></div>
+        <div class="stat"><span class="label">Current revenue</span><strong>$0.00</strong></div>
+        <table>
+          <thead>
+            <tr><th>Product</th><th>Revenue</th><th>Status</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>AI-Powered Curiosity Learning Kit</td><td>$0.00</td><td><span class="pill yellow">BUILDING</span></td></tr>
+            <tr><td>Curiosity-Driven Classroom Using AI (ebook)</td><td>$0.00</td><td><span class="pill gray">UNMARKETED</span></td></tr>
+            <tr><td>Future membership / community</td><td>$0.00</td><td><span class="pill gray">PLACEHOLDER</span></td></tr>
+          </tbody>
+        </table>
+        <!-- REVENUE TRACKER DATA END -->
+      </article>
+
+      <article class="card span-4">
         <h2>Agent Status</h2>
+        <!-- AGENT STATUS DATA START -->
         <div class="stat"><span class="label">Model</span><strong>openai-codex/gpt-5.4</strong></div>
         <div class="stat"><span class="label">Capabilities</span><strong>search, shell, git, memory, scheduling, sub-agents, docs/files</strong></div>
-        <div class="stat"><span class="label">Last active</span><strong>2026-03-13 00:09 UTC</strong></div>
+        <div class="stat"><span class="label">Last active</span><strong>2026-03-13 01:13 UTC</strong></div>
         <div class="stat"><span class="label">Status</span><strong class="green">ONLINE</strong></div>
+        <!-- AGENT STATUS DATA END -->
       </article>
+
+      <article class="card span-12">
+        <h2>Org Structure</h2>
+        <!-- ORG STRUCTURE DATA START -->
+        <table>
+          <thead>
+            <tr><th>Role</th><th>Function</th><th>Status</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Josh (Boss)</td><td>Vision, final decisions, product direction</td><td><span class="pill green">ACTIVE</span></td></tr>
+            <tr><td>Bodhi (AI Agent — openai-codex/gpt-5.4)</td><td>Strategy, operating system, execution support, dashboard management</td><td><span class="pill green">ACTIVE</span></td></tr>
+            <tr><td>MiniMax Worker</td><td>Available for delegated tasks and parallel execution</td><td><span class="pill blue">AVAILABLE</span></td></tr>
+          </tbody>
+        </table>
+        <!-- ORG STRUCTURE DATA END -->
+      </article>
+
       <article class="card span-8">
         <h2>Active Projects</h2>
+        <!-- ACTIVE PROJECTS DATA START -->
         <div class="project">
           <div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;">
             <div>
-              <h3>Business Ecosystem Blueprint</h3>
-              <p class="muted">Define the audience, offer stack, content engine, and operating cadence for a worldschool-supporting digital business.</p>
+              <h3>AI-Powered Curiosity Learning Kit</h3>
+              <p class="muted">Build the first digital toolkit for parents who want curiosity-driven learning without recreating school at home.</p>
             </div>
             <div><span class="pill yellow">IN PROGRESS</span><span class="pill red">HIGH</span></div>
           </div>
-          <p class="small muted">Deadline: Not set</p>
+          <p class="small muted">Deadline: 2026-03-30</p>
           <ul class="checks">
-            <li>☑ Defined top 3 income model candidates</li>
-            <li>☑ Chosen stack direction: Audience → Products → Membership</li>
-            <li>☐ Finalize niche and promise</li>
-            <li>☑ Select first product path: AI-Powered Curiosity Learning Kit</li>
-            <li>☐ Create 30-day build plan</li>
+            <li>☑ Product direction selected</li>
+            <li>☑ Product blueprint drafted</li>
+            <li>☐ Finalize packaging format</li>
+            <li>☐ Set launch price</li>
+            <li>☐ Build product outline and asset list</li>
+            <li>☐ Draft sales page and launch plan</li>
           </ul>
         </div>
+
         <div class="project">
           <div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;">
             <div>
               <h3>Ebook Revenue Activation</h3>
-              <p class="muted">Turn the existing ebook into a viable product asset with positioning, packaging, and first-sale marketing.</p>
+              <p class="muted">Use the existing ebook as source material and a possible supporting asset in the new product ladder.</p>
             </div>
-            <div><span class="pill gray">NOT STARTED</span><span class="pill red">HIGH</span></div>
+            <div><span class="pill yellow">IN PROGRESS</span><span class="pill yellow">MEDIUM</span></div>
           </div>
           <p class="small muted">Deadline: Not set</p>
           <ul class="checks">
-            <li>☑ Existing asset identified: <span class="small">Curiosity-Driven Classroom Using AI</span></li>
+            <li>☑ Existing asset identified</li>
             <li>☐ Audit current offer and landing page</li>
-            <li>☐ Define target buyer and positioning</li>
-            <li>☐ Build first promotion system</li>
-            <li>☐ Get first sale</li>
+            <li>☐ Decide: standalone product, bonus, or lead-in asset</li>
+            <li>☐ Pull reusable ideas into the kit</li>
           </ul>
         </div>
+
         <div class="project">
           <div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;">
             <div>
               <h3>Mission Control Dashboard</h3>
-              <p class="muted">Create and deploy a public-safe GitHub Pages dashboard for goals, projects, decisions, activity, and system health.</p>
+              <p class="muted">Maintain the command center for goals, projects, decisions, revenue, activity, and system health.</p>
             </div>
-            <div><span class="pill yellow">IN PROGRESS</span><span class="pill yellow">MEDIUM</span></div>
+            <div><span class="pill green">COMPLETE</span><span class="pill yellow">MEDIUM</span></div>
           </div>
           <p class="small muted">Deadline: 2026-03-13</p>
           <ul class="checks">
             <li>☑ Single-page dashboard designed</li>
-            <li>☑ Public-safe content rules applied</li>
-            <li>☑ Deploy-ready files organized in workspace</li>
-            <li>☐ Repo creation blocked by token permissions</li>
-            <li>☐ Add budget cap after Josh decides amount</li>
+            <li>☑ GitHub Pages deployed</li>
+            <li>☑ Revenue tracker added</li>
+            <li>☑ Countdown added</li>
+            <li>☑ Org structure added</li>
           </ul>
         </div>
+        <!-- ACTIVE PROJECTS DATA END -->
       </article>
+
       <article class="card span-4">
         <h2>Decisions Needed</h2>
-        <div class="project"><strong>Set Mission Control budget cap</strong><p class="muted small">Priority: HIGH · Waiting: 0 days</p><p class="small">Needed to make API cost tracking actionable.</p></div>
-        <div class="project"><strong>Choose first revenue wedge</strong><p class="muted small">Priority: HIGH · Waiting: 0 days</p><p class="small">First offer chosen: AI-Powered Curiosity Learning Kit. Next decision is packaging and pricing.</p></div>
-        <div class="project"><strong>Approve mission statement copy</strong><p class="muted small">Priority: MEDIUM · Waiting: 0 days</p><p class="small">Current wording can now be shifted toward polymath, curiosity-first learning.</p></div>
+        <!-- DECISIONS DATA START -->
+        <div class="project">
+          <strong>Set monthly revenue target</strong>
+          <p class="muted small">Priority: HIGH · Created: 2026-03-13 · Waiting: 0 days</p>
+          <p class="small">This will populate the Revenue Tracker target field.</p>
+        </div>
+        <div class="project">
+          <strong>Choose packaging for the Curiosity Learning Kit</strong>
+          <p class="muted small">Priority: HIGH · Created: 2026-03-13 · Waiting: 0 days</p>
+          <p class="small">Current recommendation: PDF guide + templates + AI prompt pack.</p>
+        </div>
+        <div class="project">
+          <strong>Choose launch price</strong>
+          <p class="muted small">Priority: HIGH · Created: 2026-03-13 · Waiting: 0 days</p>
+          <p class="small">Current recommendation: $29 initial launch, then raise to $49 after proof and polish.</p>
+        </div>
+        <div class="project">
+          <strong>Approve mission statement copy</strong>
+          <p class="muted small">Priority: MEDIUM · Created: 2026-03-13 · Waiting: 0 days</p>
+          <p class="small">Current wording leans into curiosity-driven, polymath-style learning with AI support.</p>
+        </div>
+        <!-- DECISIONS DATA END -->
       </article>
+
       <article class="card span-12">
         <h2>Activity Log</h2>
+        <!-- ACTIVITY LOG DATA START -->
+        <div class="log-item"><div class="muted small">2026-03-13 01:13 UTC</div><div>Updated Mission Control with revenue tracking, countdown, org structure, decision created dates, and corrected cost tracking.</div><div><span class="pill green">COMPLETED</span></div></div>
+        <div class="log-item"><div class="muted small">2026-03-13 01:11 UTC</div><div>Built the product blueprint for the AI-Powered Curiosity Learning Kit.</div><div><span class="pill green">COMPLETED</span></div></div>
+        <div class="log-item"><div class="muted small">2026-03-13 01:08 UTC</div><div>Deployed Mission Control to GitHub Pages.</div><div><span class="pill green">COMPLETED</span></div></div>
+        <div class="log-item"><div class="muted small">2026-03-13 01:07 UTC</div><div>Retried dashboard deployment with updated GitHub token.</div><div><span class="pill green">COMPLETED</span></div></div>
+        <div class="log-item"><div class="muted small">2026-03-13 01:02 UTC</div><div>Saved the first-offer decision: AI-Powered Curiosity Learning Kit.</div><div><span class="pill green">COMPLETED</span></div></div>
         <div class="log-item"><div class="muted small">2026-03-13 00:09 UTC</div><div>Built Mission Control dashboard and organized deploy-ready files in workspace.</div><div><span class="pill green">COMPLETED</span></div></div>
-        <div class="log-item"><div class="muted small">2026-03-13 00:04 UTC</div><div>Deployment blocked by GitHub token lacking repo creation permissions.</div><div><span class="pill red">FAILED</span></div></div>
+        <div class="log-item"><div class="muted small">2026-03-13 00:04 UTC</div><div>Deployment was temporarily blocked by GitHub token permissions.</div><div><span class="pill red">FAILED</span></div></div>
         <div class="log-item"><div class="muted small">2026-03-13 00:02 UTC</div><div>Captured Josh’s teaching background and existing ebook asset in workspace memory.</div><div><span class="pill green">COMPLETED</span></div></div>
-        <div class="log-item"><div class="muted small">2026-03-12 23:48 UTC</div><div>Built the first business operating system: Audience → Products → Membership.</div><div><span class="pill green">COMPLETED</span></div></div>
+        <!-- ACTIVITY LOG DATA END -->
       </article>
+
       <article class="card span-12">
         <h2>API Usage & Cost Tracking</h2>
-        <p class="muted small">Only Bodhi’s usage should be tracked here. Initialized for manual/project logging from launch forward.</p>
+        <p class="muted small">Only Bodhi’s usage should be tracked here. Codex OAuth is treated as $0.00 under Josh’s subscription. MiniMax Worker rates are listed for future delegation.</p>
+        <!-- API USAGE DATA START -->
         <table>
-          <thead><tr><th>Project</th><th>Model Used</th><th>Input Tokens</th><th>Output Tokens</th><th>Est. Cost</th><th>Last Run</th></tr></thead>
+          <thead>
+            <tr><th>Project</th><th>Model Used</th><th>Input Tokens</th><th>Output Tokens</th><th>Est. Cost</th><th>Last Run</th></tr>
+          </thead>
           <tbody>
-            <tr><td>Mission Control Dashboard</td><td>openai-codex/gpt-5.4</td><td>~1700</td><td>~1000</td><td>TBD</td><td>2026-03-13 00:09 UTC</td></tr>
-            <tr><td>Business Ecosystem Blueprint</td><td>openai-codex/gpt-5.4</td><td>TBD</td><td>TBD</td><td>TBD</td><td>2026-03-12 23:48 UTC</td></tr>
-            <tr><td>Ebook Revenue Activation</td><td>openai-codex/gpt-5.4</td><td>0</td><td>0</td><td>$0.00</td><td>Not started</td></tr>
+            <tr><td>Mission Control Dashboard</td><td>openai-codex/gpt-5.4</td><td>~1700</td><td>~1000</td><td>$0.00</td><td>2026-03-13 01:13 UTC</td></tr>
+            <tr><td>Product Blueprint</td><td>openai-codex/gpt-5.4</td><td>~1500</td><td>~2200</td><td>$0.00</td><td>2026-03-13 01:11 UTC</td></tr>
+            <tr><td>MiniMax Worker (reserved)</td><td>openrouter/minimax/minimax-m2.5</td><td>0</td><td>0</td><td>$0.00</td><td>Not run</td></tr>
           </tbody>
         </table>
         <div style="margin-top:14px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;">
-          <div class="project"><strong>Total spend this period</strong><p class="small muted">TBD — pending pricing basis</p></div>
-          <div class="project"><strong>Budget cap</strong><p class="small muted">TBD — Josh to set</p></div>
-          <div class="project"><strong>Cost breakdown by model</strong><p class="small muted">openai-codex/gpt-5.4 only so far</p></div>
+          <div class="project"><strong>Total spend this period</strong><p class="small muted">$0.00</p></div>
+          <div class="project"><strong>Budget cap</strong><p class="small muted">ASK JOSH</p></div>
+          <div class="project"><strong>Cost breakdown by model</strong><p class="small muted">Codex OAuth: $0.00 · MiniMax M2.5 rates: $0.27 / 1M input tokens, $0.95 / 1M output tokens</p></div>
         </div>
+        <!-- API USAGE DATA END -->
       </article>
+
       <article class="card span-6">
         <h2>System Health</h2>
+        <!-- SYSTEM HEALTH DATA START -->
         <div class="stat"><span class="label">Server status</span><strong class="green">HEALTHY</strong></div>
         <div class="stat"><span class="label">Container status</span><strong class="green">RUNNING</strong></div>
-        <div class="stat"><span class="label">Last response timestamp</span><strong>2026-03-13 00:09 UTC</strong></div>
-        <div class="stat"><span class="label">Errors in last 24 hours</span><strong class="yellow">1 permission issue on GitHub repo creation</strong></div>
+        <div class="stat"><span class="label">Last response timestamp</span><strong>2026-03-13 01:13 UTC</strong></div>
+        <div class="stat"><span class="label">Errors in last 24 hours</span><strong class="yellow">1 resolved GitHub permission issue during initial deployment</strong></div>
+        <!-- SYSTEM HEALTH DATA END -->
       </article>
+
       <article class="card span-6">
         <h2>Notes / Update Guide</h2>
-        <p class="muted small">Edit <code class="inline">/workspace/mission-control/index.html</code> or the real workspace path to update projects, activity, costs, or health.</p>
+        <p class="muted small">Edit <code class="inline">/workspace/mission-control/index.html</code> to update projects, revenue, decisions, activity, or health. All editable sections are clearly commented.</p>
         <ul class="checks">
           <li>☑ Public-safe: first name only</li>
           <li>☑ No secrets exposed</li>
           <li>☑ Mobile responsive</li>
           <li>☑ Single-file HTML</li>
-          <li>☐ Add real budget cap</li>
-          <li>☐ Add live token/cost workflow later if desired</li>
+          <li>☐ Set real monthly target</li>
+          <li>☐ Set real budget cap</li>
         </ul>
       </article>
     </section>
