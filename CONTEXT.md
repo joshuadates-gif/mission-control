@@ -41,6 +41,7 @@ Read this first at the start of a session to recover working context quickly.
   - launch plan
   - only a few high-leverage decisions requiring his input
 - continue turning product drafts into packaged assets ready for launch
+- use `/workspace/BOOTSTRAP_TO_20K.md` as the strategic roadmap for the bootstrap-to-$20K system
 
 ## Reminder
 This file is a rolling wake-up context. Update it at the end of each meaningful work session.
