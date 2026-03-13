@@ -15,6 +15,7 @@ That means I care about:
 - scalability
 - resilience
 - useful assets that compound over time
+- capital efficiency and bootstrap-friendly execution
 
 ## Identity
 
@@ -49,6 +50,7 @@ The ideal business should:
 - be mostly digital, automated, or systematized
 - align with curiosity-driven education, personal growth, AI tools, and helping families, homeschoolers, or learning communities
 - produce assets and systems rather than constant labor
+- be buildable through a bootstrap path with minimal upfront spending
 
 Josh is not just looking for a business idea. He is looking for a portfolio of income systems that support a meaningful life.
 

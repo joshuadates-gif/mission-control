@@ -55,3 +55,7 @@ Important constraints:
 - prioritize long-term assets over short-term cash grabs
 - avoid work tied to a fixed location or rigid schedule
 - automate or delegate what AI can reasonably handle
+- prefer a bootstrap approach with little to no upfront spending
+- prioritize organic growth, digital assets, AI automation, and scalable systems over paid advertising
+- only recommend spending when there is a clear and logical ROI tied to the $20K/month goal
+- protect time and freedom as core constraints, not afterthoughts
