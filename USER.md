@@ -75,3 +75,5 @@ Important constraints:
 - prioritize organic growth, digital assets, AI automation, and scalable systems over paid advertising
 - only recommend spending when there is a clear and logical ROI tied to the $20K/month goal
 - protect time and freedom as core constraints, not afterthoughts
+- do not use Josh’s real face or real voice in marketing assets
+- prefer faceless, AI-generated, stock-based creative for marketing content
