@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mission Control</title>
+  <style>
+    :root {
+      --bg: #0b1220;
+      --panel: #121a2b;
+      --panel-2: #182235;
+      --text: #e6edf7;
+      --muted: #93a4bd;
+      --green: #2ecc71;
+      --yellow: #f1c40f;
+      --red: #ff5c5c;
+      --gray: #7f8c8d;
+      --blue: #5dade2;
+      --border: #24324a;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: linear-gradient(180deg, #09101c 0%, #0b1220 100%);
+      color: var(--text);
+      line-height: 1.45;
+    }
+    .wrap { max-width: 1280px; margin: 0 auto; padding: 24px; }
+    .hero, .card {
+      background: rgba(18, 26, 43, 0.95);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.22);
+    }
+    .hero { padding: 28px; margin-bottom: 20px; }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 { font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 8px; }
+    h2 { font-size: 1.1rem; color: #f4f7fb; margin-bottom: 14px; }
+    .subtle, .muted { color: var(--muted); }
+    .mission { font-size: 1.05rem; max-width: 860px; }
+    .grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 18px; }
+    .card { padding: 20px; }
+    .span-12 { grid-column: span 12; }
+    .span-8 { grid-column: span 8; }
+    .span-6 { grid-column: span 6; }
+    .span-4 { grid-column: span 4; }
+    .pill {
+      display: inline-block; padding: 5px 10px; border-radius: 999px; font-size: 0.82rem;
+      font-weight: 700; margin-right: 8px; margin-bottom: 8px; border: 1px solid transparent;
+    }
+    .green { background: rgba(46, 204, 113, 0.12); color: var(--green); border-color: rgba(46, 204, 113, 0.28); }
+    .yellow { background: rgba(241, 196, 15, 0.12); color: var(--yellow); border-color: rgba(241, 196, 15, 0.28); }
+    .red { background: rgba(255, 92, 92, 0.12); color: var(--red); border-color: rgba(255, 92, 92, 0.28); }
+    .gray { background: rgba(127, 140, 141, 0.13); color: #c0c8cf; border-color: rgba(127, 140, 141, 0.28); }
+    .blue { background: rgba(93, 173, 226, 0.12); color: var(--blue); border-color: rgba(93, 173, 226, 0.28); }
+    .stat {
+      display: flex; align-items: baseline; justify-content: space-between; padding: 10px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .stat:last-child { border-bottom: none; }
+    .stat .label { color: var(--muted); }
+    .project {
+      border: 1px solid rgba(255,255,255,0.06); border-radius: 14px; padding: 16px;
+      margin-bottom: 14px; background: rgba(255,255,255,0.02);
+    }
+    ul.checks { list-style: none; padding-left: 0; margin: 10px 0 0; }
+    ul.checks li { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
+    th, td {
+      text-align: left; padding: 10px 8px; border-bottom: 1px solid rgba(255,255,255,0.07); vertical-align: top;
+    }
+    th { color: #cfd8e6; font-weight: 700; }
+    .small { font-size: 0.88rem; }
+    .log-item {
+      display: grid; grid-template-columns: 170px 1fr 130px; gap: 12px; padding: 10px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .log-item:last-child { border-bottom: none; }
+    code.inline { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px; }
+    @media (max-width: 900px) {
+      .span-8, .span-6, .span-4 { grid-column: span 12; }
+      .log-item { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Public-safe dashboard. Edit the commented data blocks below. -->
+  <div class="wrap">
+    <section class="hero">
+      <!-- HEADER DATA START -->
+      <div class="pill blue">Mission Control</div>
+      <div class="pill green">ONLINE</div>
+      <h1>Mission Control — Josh</h1>
+      <p class="subtle">Updated: <span id="updated-date">2026-03-13 00:09 UTC</span></p>
+      <p class="mission">Build a location-independent, AI-leveraged business ecosystem that supports Josh’s family freedom and worldschooling life through curiosity-driven learning.</p>
+      <!-- HEADER DATA END -->
+    </section>
+    <section class="grid">
+      <article class="card span-6">
+        <h2>My Status</h2>
+        <div class="stat"><span class="label">Current focus</span><strong>Choose the first business wedge and turn the existing ebook into a revenue asset</strong></div>
+        <div class="stat"><span class="label">Current blockers</span><strong>Need product positioning, budget cap, and prioritized project stack</strong></div>
+        <div class="stat"><span class="label">Decisions needed now</span><strong>Pick first product path, mission statement wording, and budget target</strong></div>
+      </article>
+      <article class="card span-6">
+        <h2>Agent Status</h2>
+        <div class="stat"><span class="label">Model</span><strong>openai-codex/gpt-5.4</strong></div>
+        <div class="stat"><span class="label">Capabilities</span><strong>search, shell, git, memory, scheduling, sub-agents, docs/files</strong></div>
+        <div class="stat"><span class="label">Last active</span><strong>2026-03-13 00:09 UTC</strong></div>
+        <div class="stat"><span class="label">Status</span><strong class="green">ONLINE</strong></div>
+      </article>
+      <article class="card span-8">
+        <h2>Active Projects</h2>
+        <div class="project">
+          <div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;">
+            <div>
+              <h3>Business Ecosystem Blueprint</h3>
+              <p class="muted">Define the audience, offer stack, content engine, and operating cadence for a worldschool-supporting digital business.</p>
+            </div>
+            <div><span class="pill yellow">IN PROGRESS</span><span class="pill red">HIGH</span></div>
+          </div>
+          <p class="small muted">Deadline: Not set</p>
+          <ul class="checks">
+            <li>☑ Defined top 3 income model candidates</li>
+            <li>☑ Chosen stack direction: Audience → Products → Membership</li>
+            <li>☐ Finalize niche and promise</li>
+            <li>☐ Select first product path</li>
+            <li>☐ Create 30-day build plan</li>
+          </ul>
+        </div>
+        <div class="project">
+          <div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;">
+            <div>
+              <h3>Ebook Revenue Activation</h3>
+              <p class="muted">Turn the existing ebook into a viable product asset with positioning, packaging, and first-sale marketing.</p>
+            </div>
+            <div><span class="pill gray">NOT STARTED</span><span class="pill red">HIGH</span></div>
+          </div>
+          <p class="small muted">Deadline: Not set</p>
+          <ul class="checks">
+            <li>☑ Existing asset identified: <span class="small">Curiosity-Driven Classroom Using AI</span></li>
+            <li>☐ Audit current offer and landing page</li>
+            <li>☐ Define target buyer and positioning</li>
+            <li>☐ Build first promotion system</li>
+            <li>☐ Get first sale</li>
+          </ul>
+        </div>
+        <div class="project">
+          <div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;">
+            <div>
+              <h3>Mission Control Dashboard</h3>
+              <p class="muted">Create and deploy a public-safe GitHub Pages dashboard for goals, projects, decisions, activity, and system health.</p>
+            </div>
+            <div><span class="pill yellow">IN PROGRESS</span><span class="pill yellow">MEDIUM</span></div>
+          </div>
+          <p class="small muted">Deadline: 2026-03-13</p>
+          <ul class="checks">
+            <li>☑ Single-page dashboard designed</li>
+            <li>☑ Public-safe content rules applied</li>
+            <li>☑ Deploy-ready files organized in workspace</li>
+            <li>☐ Repo creation blocked by token permissions</li>
+            <li>☐ Add budget cap after Josh decides amount</li>
+          </ul>
+        </div>
+      </article>
+      <article class="card span-4">
+        <h2>Decisions Needed</h2>
+        <div class="project"><strong>Set Mission Control budget cap</strong><p class="muted small">Priority: HIGH · Waiting: 0 days</p><p class="small">Needed to make API cost tracking actionable.</p></div>
+        <div class="project"><strong>Choose first revenue wedge</strong><p class="muted small">Priority: HIGH · Waiting: 0 days</p><p class="small">Best next fork: existing ebook, a family learning toolkit, or AI planning tools.</p></div>
+        <div class="project"><strong>Approve mission statement copy</strong><p class="muted small">Priority: MEDIUM · Waiting: 0 days</p><p class="small">Current wording can now be shifted toward polymath, curiosity-first learning.</p></div>
+      </article>
+      <article class="card span-12">
+        <h2>Activity Log</h2>
+        <div class="log-item"><div class="muted small">2026-03-13 00:09 UTC</div><div>Built Mission Control dashboard and organized deploy-ready files in workspace.</div><div><span class="pill green">COMPLETED</span></div></div>
+        <div class="log-item"><div class="muted small">2026-03-13 00:04 UTC</div><div>Deployment blocked by GitHub token lacking repo creation permissions.</div><div><span class="pill red">FAILED</span></div></div>
+        <div class="log-item"><div class="muted small">2026-03-13 00:02 UTC</div><div>Captured Josh’s teaching background and existing ebook asset in workspace memory.</div><div><span class="pill green">COMPLETED</span></div></div>
+        <div class="log-item"><div class="muted small">2026-03-12 23:48 UTC</div><div>Built the first business operating system: Audience → Products → Membership.</div><div><span class="pill green">COMPLETED</span></div></div>
+      </article>
+      <article class="card span-12">
+        <h2>API Usage & Cost Tracking</h2>
+        <p class="muted small">Only Bodhi’s usage should be tracked here. Initialized for manual/project logging from launch forward.</p>
+        <table>
+          <thead><tr><th>Project</th><th>Model Used</th><th>Input Tokens</th><th>Output Tokens</th><th>Est. Cost</th><th>Last Run</th></tr></thead>
+          <tbody>
+            <tr><td>Mission Control Dashboard</td><td>openai-codex/gpt-5.4</td><td>~1700</td><td>~1000</td><td>TBD</td><td>2026-03-13 00:09 UTC</td></tr>
+            <tr><td>Business Ecosystem Blueprint</td><td>openai-codex/gpt-5.4</td><td>TBD</td><td>TBD</td><td>TBD</td><td>2026-03-12 23:48 UTC</td></tr>
+            <tr><td>Ebook Revenue Activation</td><td>openai-codex/gpt-5.4</td><td>0</td><td>0</td><td>$0.00</td><td>Not started</td></tr>
+          </tbody>
+        </table>
+        <div style="margin-top:14px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;">
+          <div class="project"><strong>Total spend this period</strong><p class="small muted">TBD — pending pricing basis</p></div>
+          <div class="project"><strong>Budget cap</strong><p class="small muted">TBD — Josh to set</p></div>
+          <div class="project"><strong>Cost breakdown by model</strong><p class="small muted">openai-codex/gpt-5.4 only so far</p></div>
+        </div>
+      </article>
+      <article class="card span-6">
+        <h2>System Health</h2>
+        <div class="stat"><span class="label">Server status</span><strong class="green">HEALTHY</strong></div>
+        <div class="stat"><span class="label">Container status</span><strong class="green">RUNNING</strong></div>
+        <div class="stat"><span class="label">Last response timestamp</span><strong>2026-03-13 00:09 UTC</strong></div>
+        <div class="stat"><span class="label">Errors in last 24 hours</span><strong class="yellow">1 permission issue on GitHub repo creation</strong></div>
+      </article>
+      <article class="card span-6">
+        <h2>Notes / Update Guide</h2>
+        <p class="muted small">Edit <code class="inline">/workspace/mission-control/index.html</code> or the real workspace path to update projects, activity, costs, or health.</p>
+        <ul class="checks">
+          <li>☑ Public-safe: first name only</li>
+          <li>☑ No secrets exposed</li>
+          <li>☑ Mobile responsive</li>
+          <li>☑ Single-file HTML</li>
+          <li>☐ Add real budget cap</li>
+          <li>☐ Add live token/cost workflow later if desired</li>
+        </ul>
+      </article>
+    </section>
+  </div>
+</body>
+</html>
