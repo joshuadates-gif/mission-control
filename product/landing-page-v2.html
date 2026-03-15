@@ -34,6 +34,10 @@
       background: linear-gradient(180deg, #f7f4ee 0%, #fcfaf6 100%);
       line-height: 1.6;
     }
+    img {
+      max-width: 100%;
+      display: block;
+    }
     .wrap {
       width: min(var(--max), calc(100% - 28px));
       margin: 0 auto;
@@ -85,7 +89,7 @@
     }
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.05fr .95fr;
+      grid-template-columns: 1.02fr .98fr;
       gap: 34px;
       align-items: center;
     }
@@ -150,6 +154,21 @@
       background: linear-gradient(180deg, rgba(255,253,249,.92) 0%, rgba(243,248,255,.98) 100%);
       backdrop-filter: blur(10px);
     }
+    .hero-image {
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      border: 1px solid rgba(255,255,255,.8);
+      margin-bottom: 18px;
+      aspect-ratio: 4 / 3;
+    }
+    .hero-image img,
+    .section-image img,
+    .buy-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
     .mini-checks {
       list-style: none;
       padding: 0;
@@ -175,12 +194,12 @@
     .mockup-wrap {
       display: grid;
       place-items: center;
-      min-height: 520px;
+      min-height: 420px;
       position: relative;
     }
     .bundle {
       position: relative;
-      width: min(100%, 480px);
+      width: min(100%, 420px);
       aspect-ratio: 4/4.7;
     }
     .bundle-shadow {
@@ -224,10 +243,28 @@
       max-width: 760px;
       margin-bottom: 32px;
     }
+    .inside-grid,
+    .who-grid,
+    .buy-grid {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 28px;
+      align-items: center;
+    }
+    .section-image,
+    .buy-image {
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      aspect-ratio: 4 / 4.2;
+      border: 1px solid var(--line);
+      background: #fff;
+    }
     .grid-10 {
       display: grid;
       grid-template-columns: repeat(5, 1fr);
       gap: 18px;
+      margin-top: 22px;
     }
     .item-card {
       background: #fff;
@@ -279,10 +316,6 @@
       border-radius: 30px;
       box-shadow: var(--shadow);
       padding: 36px;
-      display: grid;
-      grid-template-columns: 1.05fr .95fr;
-      gap: 26px;
-      align-items: start;
     }
     .price-box {
       background: #fff;
@@ -316,15 +349,15 @@
       font-size: .95rem;
     }
     @media (max-width: 980px) {
-      .hero-grid, .offer, .two-col, .pain-grid, .grid-10 {
+      .hero-grid, .inside-grid, .who-grid, .buy-grid, .offer, .two-col, .pain-grid, .grid-10 {
         grid-template-columns: 1fr 1fr;
       }
       .pain-grid { grid-template-columns: 1fr; }
-      .mockup-wrap { min-height: 420px; }
+      .mockup-wrap { min-height: 360px; }
     }
     @media (max-width: 720px) {
       section { padding: 62px 0; }
-      .hero-grid, .offer, .two-col, .grid-10 {
+      .hero-grid, .inside-grid, .who-grid, .buy-grid, .offer, .two-col, .grid-10 {
         grid-template-columns: 1fr;
       }
       .hero { padding-top: 58px; }
@@ -358,41 +391,46 @@
           <span class="pill">AI support without losing the human part</span>
         </div>
       </div>
-      <div class="mockup-wrap">
-        <div class="bundle">
-          <div class="sheet small-left">
-            <div class="sheet-bar"></div>
-            <div class="sheet-body">
-              <div class="dot-row"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
-              <div class="line short gold"></div>
-              <div class="line mid"></div>
-              <div class="line"></div>
-              <div class="grid-3line"><span></span><span></span><span></span></div>
+      <div>
+        <div class="hero-image">
+          <img src="https://images.unsplash.com/photo-1588075592446-265fd1e6e76f?w=1200" alt="Family learning together" />
+        </div>
+        <div class="mockup-wrap">
+          <div class="bundle">
+            <div class="sheet small-left">
+              <div class="sheet-bar"></div>
+              <div class="sheet-body">
+                <div class="dot-row"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+                <div class="line short gold"></div>
+                <div class="line mid"></div>
+                <div class="line"></div>
+                <div class="grid-3line"><span></span><span></span><span></span></div>
+              </div>
             </div>
-          </div>
-          <div class="sheet small-right">
-            <div class="sheet-bar"></div>
-            <div class="sheet-body">
-              <div class="dot-row"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
-              <div class="line short"></div>
-              <div class="line gold"></div>
-              <div class="line mid"></div>
-              <div class="grid-3line"><span></span><span></span><span></span></div>
+            <div class="sheet small-right">
+              <div class="sheet-bar"></div>
+              <div class="sheet-body">
+                <div class="dot-row"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+                <div class="line short"></div>
+                <div class="line gold"></div>
+                <div class="line mid"></div>
+                <div class="grid-3line"><span></span><span></span><span></span></div>
+              </div>
             </div>
-          </div>
-          <div class="sheet main">
-            <div class="sheet-bar"></div>
-            <div class="sheet-body">
-              <div class="dot-row"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
-              <div class="line short gold"></div>
-              <div class="line"></div>
-              <div class="line mid"></div>
-              <div class="line"></div>
-              <div class="grid-3line"><span></span><span></span><span></span></div>
-              <div class="line mid"></div>
+            <div class="sheet main">
+              <div class="sheet-bar"></div>
+              <div class="sheet-body">
+                <div class="dot-row"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+                <div class="line short gold"></div>
+                <div class="line"></div>
+                <div class="line mid"></div>
+                <div class="line"></div>
+                <div class="grid-3line"><span></span><span></span><span></span></div>
+                <div class="line mid"></div>
+              </div>
             </div>
+            <div class="bundle-shadow"></div>
           </div>
-          <div class="bundle-shadow"></div>
         </div>
       </div>
     </div>
@@ -400,29 +438,37 @@
 
   <main>
     <section id="inside" class="section-alt">
-      <div class="wrap">
-        <div class="section-head">
-          <div class="eyebrow">What’s Inside</div>
-          <h2>10 practical pieces you can actually use</h2>
-          <p class="muted">This is not a bloated printable bundle you’ll never touch. It’s a focused toolkit designed to help you notice curiosity, shape it, and keep it moving.</p>
+      <div class="wrap inside-grid">
+        <div>
+          <div class="section-head">
+            <div class="eyebrow">What’s Inside</div>
+            <h2>10 practical pieces you can actually use</h2>
+            <p class="muted">This is not a bloated printable bundle you’ll never touch. It’s a focused toolkit designed to help you notice curiosity, shape it, and keep it moving.</p>
+          </div>
+          <div class="grid-10">
+            <div class="item-card tone-1"><div class="item-icon">👋</div><h3>Welcome Guide</h3><p>A grounding intro that helps you approach learning at home with more freedom, clarity, and less pressure.</p></div>
+            <div class="item-card tone-2"><div class="item-icon">⚡</div><h3>Quick Start Guide</h3><p>The fastest way to start with one kid, one live interest, and one simple next step.</p></div>
+            <div class="item-card tone-3"><div class="item-icon">🔎</div><h3>Curiosity Prompts</h3><p>Questions that help you notice what your kid is actually interested in right now.</p></div>
+            <div class="item-card tone-4"><div class="item-icon">🤖</div><h3>AI Prompt Library</h3><p>Copy-and-paste prompts that help you turn interests into project ideas, outings, and deeper learning.</p></div>
+            <div class="item-card tone-5"><div class="item-icon">🗺️</div><h3>Project Planner</h3><p>A simple way to move from “my kid likes this” to “here’s what we’re doing this week.”</p></div>
+            <div class="item-card tone-2"><div class="item-icon">🌿</div><h3>Structure Without School</h3><p>A calmer way to create rhythm and momentum without recreating a classroom at home.</p></div>
+            <div class="item-card tone-1"><div class="item-icon">🧰</div><h3>Planning Sheets</h3><p>Mini templates for projects, outings, interview ideas, read-watch-make cycles, and hands-on experiences.</p></div>
+            <div class="item-card tone-3"><div class="item-icon">🌟</div><h3>Role Model Study</h3><p>A way to connect interests to real people so learning feels more lived and human.</p></div>
+            <div class="item-card tone-4"><div class="item-icon">💬</div><h3>Reflection Prompts</h3><p>Questions that help your kid make meaning from what they did, noticed, and discovered.</p></div>
+            <div class="item-card tone-5"><div class="item-icon">🧭</div><h3>Family Learning Map</h3><p>A big-picture view of what’s alive, what’s growing, and what might make sense next.</p></div>
+          </div>
         </div>
-        <div class="grid-10">
-          <div class="item-card tone-1"><div class="item-icon">👋</div><h3>Welcome Guide</h3><p>A grounding intro that helps you approach learning at home with more freedom, clarity, and less pressure.</p></div>
-          <div class="item-card tone-2"><div class="item-icon">⚡</div><h3>Quick Start Guide</h3><p>The fastest way to start with one kid, one live interest, and one simple next step.</p></div>
-          <div class="item-card tone-3"><div class="item-icon">🔎</div><h3>Curiosity Prompts</h3><p>Questions that help you notice what your kid is actually interested in right now.</p></div>
-          <div class="item-card tone-4"><div class="item-icon">🤖</div><h3>AI Prompt Library</h3><p>Copy-and-paste prompts that help you turn interests into project ideas, outings, and deeper learning.</p></div>
-          <div class="item-card tone-5"><div class="item-icon">🗺️</div><h3>Project Planner</h3><p>A simple way to move from “my kid likes this” to “here’s what we’re doing this week.”</p></div>
-          <div class="item-card tone-2"><div class="item-icon">🌿</div><h3>Structure Without School</h3><p>A calmer way to create rhythm and momentum without recreating a classroom at home.</p></div>
-          <div class="item-card tone-1"><div class="item-icon">🧰</div><h3>Planning Sheets</h3><p>Mini templates for projects, outings, interview ideas, read-watch-make cycles, and hands-on experiences.</p></div>
-          <div class="item-card tone-3"><div class="item-icon">🌟</div><h3>Role Model Study</h3><p>A way to connect interests to real people so learning feels more lived and human.</p></div>
-          <div class="item-card tone-4"><div class="item-icon">💬</div><h3>Reflection Prompts</h3><p>Questions that help your kid make meaning from what they did, noticed, and discovered.</p></div>
-          <div class="item-card tone-5"><div class="item-icon">🧭</div><h3>Family Learning Map</h3><p>A big-picture view of what’s alive, what’s growing, and what might make sense next.</p></div>
+        <div class="section-image">
+          <img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=800" alt="Curious child learning" />
         </div>
       </div>
     </section>
 
     <section class="section-soft">
-      <div class="wrap two-col">
+      <div class="wrap who-grid">
+        <div class="section-image">
+          <img src="https://images.unsplash.com/photo-1476703993599-0035a21b17a9?w=800" alt="Parent and child learning together" />
+        </div>
         <div class="who-card">
           <div class="eyebrow">Who This Is For</div>
           <h2>Made for parents who want learning to feel more alive</h2>
@@ -433,10 +479,6 @@
             <li><span class="icon">✓</span><span>You need structure, but not the kind that drains all the life out of learning.</span></li>
             <li><span class="icon">✓</span><span>You like the idea of AI helping behind the scenes, but you still want your relationship at the center.</span></li>
           </ul>
-        </div>
-        <div class="card" style="background:linear-gradient(180deg,#fffdf9 0%,#fff4e6 100%);">
-          <h3>What it feels like on the other side</h3>
-          <p class="muted">Instead of piecing things together from random ideas online, you have a usable process. Instead of wondering what to do with your kid’s curiosity, you know how to turn it into something meaningful. Instead of choosing between rigid curriculum and total uncertainty, you get a middle path that actually works.</p>
         </div>
       </div>
     </section>
@@ -466,30 +508,35 @@
     </section>
 
     <section id="buy" class="section-soft">
-      <div class="wrap offer">
-        <div>
-          <div class="eyebrow">Buy the Kit</div>
-          <h2>Get the AI-Powered Curiosity Learning Kit</h2>
-          <p class="muted">A practical digital toolkit to help you turn curiosity into meaningful learning — without turning home into school.</p>
-          <ul class="mini-checks">
-            <li><span class="icon">📦</span><span>10 focused product files</span></li>
-            <li><span class="icon">🖨️</span><span>Easy to print, save, or use digitally</span></li>
-            <li><span class="icon">💡</span><span>Built for real family use, not theoretical homeschooling copy</span></li>
-            <li><span class="icon">🤍</span><span>Designed to keep curiosity, relationship, and real life at the center</span></li>
-          </ul>
-          <div class="guarantee">
-            <h3>30-Day Money-Back Guarantee</h3>
-            <p>If you get the kit and decide it’s not useful for your family, you can ask for your money back within 30 days. Simple. Low risk. No pressure.</p>
-          </div>
+      <div class="wrap buy-grid">
+        <div class="buy-image">
+          <img src="https://images.unsplash.com/photo-1484820540004-14229fe36ca4?w=800" alt="Warm family moment" />
         </div>
-        <div class="price-box">
-          <div class="eyebrow" style="margin-bottom:10px;">Launch Price</div>
-          <div class="price-tag">$29</div>
-          <p class="muted">One payment. Digital download. Start using it right away.</p>
-          <div class="cta-row" style="margin:18px 0 10px;">
-            <a class="button primary" href="#">Buy Now for $29</a>
+        <div class="offer">
+          <div>
+            <div class="eyebrow">Buy the Kit</div>
+            <h2>Get the AI-Powered Curiosity Learning Kit</h2>
+            <p class="muted">A practical digital toolkit to help you turn curiosity into meaningful learning — without turning home into school.</p>
+            <ul class="mini-checks">
+              <li><span class="icon">📦</span><span>10 focused product files</span></li>
+              <li><span class="icon">🖨️</span><span>Easy to print, save, or use digitally</span></li>
+              <li><span class="icon">💡</span><span>Built for real family use, not theoretical homeschooling copy</span></li>
+              <li><span class="icon">🤍</span><span>Designed to keep curiosity, relationship, and real life at the center</span></li>
+            </ul>
+            <div class="guarantee">
+              <h3>30-Day Money-Back Guarantee</h3>
+              <p>If you get the kit and decide it’s not useful for your family, you can ask for your money back within 30 days. Simple. Low risk. No pressure.</p>
+            </div>
           </div>
-          <p class="muted" style="font-size:.95rem;">Replace this button link with your checkout, GoHighLevel order page, or payment link.</p>
+          <div class="price-box">
+            <div class="eyebrow" style="margin-bottom:10px;">Launch Price</div>
+            <div class="price-tag">$29</div>
+            <p class="muted">One payment. Digital download. Start using it right away.</p>
+            <div class="cta-row" style="margin:18px 0 10px;">
+              <a class="button primary" href="#">Buy Now for $29</a>
+            </div>
+            <p class="muted" style="font-size:.95rem;">Replace this button link with your checkout, GoHighLevel order page, or payment link.</p>
+          </div>
         </div>
       </div>
     </section>
