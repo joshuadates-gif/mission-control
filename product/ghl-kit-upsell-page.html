@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI-Powered Curiosity Learning Kit</title>
+  <meta name="description" content="A $29 practical toolkit that helps parents turn curiosity into projects, conversations, real-world learning, and calmer rhythm at home." />
+  <style>
+    :root {
+      --bg: #f7f4ee;
+      --cream: #fffdf9;
+      --cream-2: #fff6ea;
+      --ink: #1f2937;
+      --muted: #5b6472;
+      --blue: #2563eb;
+      --blue-dark: #1d4ed8;
+      --gold: #d97706;
+      --gold-soft: #fff0d9;
+      --mint: #ebf8f2;
+      --lav: #f4f0ff;
+      --rose: #fff0ea;
+      --line: #e7dfd3;
+      --shadow: 0 18px 45px rgba(15,23,42,.08);
+      --shadow-lg: 0 28px 70px rgba(15,23,42,.12);
+      --max: 1160px;
+      --radius: 28px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: linear-gradient(180deg, #f7f4ee 0%, #fcfaf6 100%);
+      line-height: 1.6;
+    }
+    img { max-width: 100%; display: block; }
+    .wrap { width: min(var(--max), calc(100% - 28px)); margin: 0 auto; }
+    section { padding: 84px 0; }
+    .section-alt { background: rgba(255,255,255,.45); }
+    .section-soft { background: linear-gradient(180deg, rgba(255,240,217,.45) 0%, rgba(255,255,255,.2) 100%); }
+    .eyebrow {
+      display: inline-block; font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: .14em;
+      padding: 8px 12px; border-radius: 999px; background: rgba(217,119,6,.12); color: var(--gold); margin-bottom: 18px;
+    }
+    h1,h2,h3 { line-height: 1.05; margin: 0 0 16px; }
+    h1 { font-size: clamp(2.8rem, 5.8vw, 5rem); font-weight: 900; letter-spacing: -0.04em; max-width: 11ch; }
+    h2 { font-size: clamp(2rem, 3vw, 3rem); }
+    h3 { font-size: 1.2rem; }
+    p { margin: 0 0 14px; }
+    .muted { color: var(--muted); }
+    .lead { font-size: 1.16rem; color: var(--muted); max-width: 760px; }
+    .hero {
+      padding: 86px 0 64px;
+      background:
+        radial-gradient(circle at 15% 12%, rgba(255,255,255,.35), transparent 26%),
+        radial-gradient(circle at 90% 10%, rgba(59,130,246,.16), transparent 25%),
+        radial-gradient(circle at 70% 30%, rgba(217,119,6,.16), transparent 28%),
+        linear-gradient(135deg, #fff2df 0%, #f6f0ff 48%, #eef6ff 100%);
+      overflow: hidden;
+    }
+    .hero-grid, .two-col, .offer-grid, .author-grid { display:grid; grid-template-columns: 1.05fr .95fr; gap: 30px; align-items: center; }
+    .cta-row { display:flex; flex-wrap:wrap; gap:14px; margin:24px 0 18px; }
+    .button {
+      display:inline-flex; align-items:center; justify-content:center; gap:10px; padding:15px 24px; border-radius:16px;
+      text-decoration:none; font-weight:800; transition:.2s ease;
+    }
+    .button.primary { background: var(--blue); color: white; box-shadow: var(--shadow); }
+    .button.primary:hover { background: var(--blue-dark); transform: translateY(-1px); }
+    .button.secondary { background: rgba(255,255,255,.78); color: var(--ink); border:1px solid rgba(255,255,255,.8); }
+    .pill-row { display:flex; flex-wrap:wrap; gap:10px; margin-top:16px; }
+    .pill { padding:8px 12px; border-radius:999px; background: rgba(255,255,255,.76); border:1px solid rgba(255,255,255,.85); color: var(--muted); font-size:.95rem; }
+    .card { background: var(--cream); border:1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); padding: 28px; }
+    .hero-image, .author-image, .offer-image { border-radius: 28px; overflow: hidden; box-shadow: var(--shadow-lg); border:1px solid var(--line); aspect-ratio: 4 / 4.3; }
+    .hero-image img, .author-image img, .offer-image img { width:100%; height:100%; object-fit:cover; }
+    .pain-grid, .kit-grid, .faq-grid, .stack-grid { display:grid; gap:18px; }
+    .pain-grid { grid-template-columns: repeat(3, 1fr); }
+    .kit-grid { grid-template-columns: repeat(2, 1fr); }
+    .pain-card, .faq-item, .stack-item, .kit-card {
+      border-radius: 24px; padding: 24px; border:1px solid var(--line); box-shadow: 0 10px 30px rgba(15,23,42,.04);
+    }
+    .pain-card:nth-child(1), .stack-item:nth-child(1), .kit-card:nth-child(1), .kit-card:nth-child(5), .kit-card:nth-child(9) { background: var(--gold-soft); }
+    .pain-card:nth-child(2), .stack-item:nth-child(2), .kit-card:nth-child(2), .kit-card:nth-child(6), .kit-card:nth-child(10) { background: var(--mint); }
+    .pain-card:nth-child(3), .stack-item:nth-child(3), .kit-card:nth-child(3), .kit-card:nth-child(7) { background: var(--lav); }
+    .kit-card:nth-child(4), .stack-item:nth-child(4), .kit-card:nth-child(8) { background: var(--rose); }
+    .pain-card p, .faq-item p, .stack-item p, .kit-card p { color: var(--muted); }
+    .offer-box {
+      background: linear-gradient(180deg, #fffdf9 0%, #eef6ff 100%);
+      border:1px solid var(--line); border-radius:30px; box-shadow: var(--shadow); padding: 34px;
+    }
+    .price-box { background:white; border:1px solid var(--line); border-radius:22px; padding:26px; margin-top: 18px; }
+    .price-tag { font-size: 3.2rem; font-weight: 900; line-height: 1; margin: 8px 0 12px; }
+    .strike { text-decoration: line-through; color: #8b95a7; }
+    .guarantee { background:white; border:1px solid var(--line); border-radius:24px; padding: 24px; margin-top: 18px; }
+    .faq-grid { grid-template-columns: 1fr 1fr; }
+    .floating-cta { position: fixed; right: 16px; bottom: 16px; z-index: 40; box-shadow: var(--shadow-lg); }
+    .floating-cta .button { border-radius: 999px; }
+    ul.clean { padding-left: 18px; margin: 0; }
+    ul.clean li { margin: 0 0 10px; color: var(--muted); }
+    footer { padding: 28px 0 92px; text-align:center; color: var(--muted); font-size:.95rem; }
+    @media (max-width: 980px) {
+      .hero-grid, .two-col, .offer-grid, .author-grid, .pain-grid, .kit-grid, .faq-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 720px) {
+      section { padding: 62px 0; }
+      .floating-cta { left: 12px; right: 12px; bottom: 12px; }
+      .floating-cta .button { width: 100%; }
+      footer { padding-bottom: 100px; }
+      .card, .offer-box, .price-box, .guarantee, .pain-card, .faq-item, .stack-item, .kit-card { padding: 20px; }
+      h1 { max-width: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="floating-cta"><a class="button primary" href="#buy">Add the Kit • $29</a></div>
+
+  <header class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="eyebrow">One-Time Upsell • $29</div>
+        <h1>You just got the playbook — now get the tools.</h1>
+        <p class="lead">The ebook gives you the mindset. The AI-Powered Curiosity Learning Kit gives you the ready-to-use tools that help you turn curiosity into projects, conversations, real-world learning, and a calmer rhythm at home.</p>
+        <div class="cta-row">
+          <a class="button primary" href="#buy">Yes — Add the Kit for $29</a>
+          <a class="button secondary" href="#tools">See the 10 Tools</a>
+        </div>
+        <div class="pill-row">
+          <span class="pill">10 practical tools</span>
+          <span class="pill">Instant digital access</span>
+          <span class="pill">Built for homeschool + family learning</span>
+          <span class="pill">30-day guarantee</span>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?w=1200" alt="Parent and child learning at a computer together" />
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section-alt">
+      <div class="wrap">
+        <div class="eyebrow">Why This Upsell Matters</div>
+        <h2>The ebook shows you the path. The kit helps you walk it this week.</h2>
+        <p class="lead">Most parents don’t need more theory. They need a simple way to notice what’s alive in their kid, shape it into something real, and keep momentum going without turning home learning into school-at-home.</p>
+        <div class="pain-grid">
+          <div class="pain-card"><h3>You have the big picture — but need the actual tools</h3><p>You already get the philosophy. What helps now is having usable prompts, planners, and worksheets that make the next step obvious.</p></div>
+          <div class="pain-card"><h3>You want structure without losing the life in it</h3><p>You do not want chaos, but you also do not want rigid curriculum. You want something usable in the middle.</p></div>
+          <div class="pain-card"><h3>You want to use AI without handing learning over to a screen</h3><p>The kit keeps AI in the right role: behind-the-scenes support for you, not a substitute for relationship, conversation, or real-world experience.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="tools" class="section-soft">
+      <div class="wrap two-col">
+        <div>
+          <div class="eyebrow">The 10 Tools</div>
+          <h2>Everything inside the AI-Powered Curiosity Learning Kit</h2>
+          <p class="muted">This is the practical layer. The pages you come back to when a new interest appears, a project stalls out, or you just need help getting from “that’s interesting” to “we actually did something with it.”</p>
+          <div class="kit-grid">
+            <div class="kit-card"><h3>1. Welcome Guide</h3><p>A grounding overview so you know exactly what this kit is for and how to use it without overcomplicating things.</p></div>
+            <div class="kit-card"><h3>2. Quick Start Guide</h3><p>The fastest path to action when you want to start this week, not after reading everything perfectly.</p></div>
+            <div class="kit-card"><h3>3. Family Curiosity Prompts</h3><p>Questions that help you notice what your child is genuinely drawn to beneath the surface topic.</p></div>
+            <div class="kit-card"><h3>4. AI Prompt Library</h3><p>Ready-to-use prompts that help you brainstorm projects, books, field trips, activities, and next steps faster.</p></div>
+            <div class="kit-card"><h3>5. Interest-to-Project Planner</h3><p>A simple bridge from spark to doable project so ideas stop dying as soon as the week gets busy.</p></div>
+            <div class="kit-card"><h3>6. Structure Without School Guide</h3><p>A calmer framework for creating rhythm and follow-through without recreating a classroom at home.</p></div>
+            <div class="kit-card"><h3>7. Project and Experience Planning Sheets</h3><p>Pages that help you shape materials, outings, activities, and simple project flow without mental clutter.</p></div>
+            <div class="kit-card"><h3>8. Role Model Study Template</h3><p>A way to help your child learn through admired people, stories, examples, and real lives they connect with.</p></div>
+            <div class="kit-card"><h3>9. Reflection and Synthesis Prompts</h3><p>Prompts that help learning stick so good experiences turn into insight, ownership, and better next questions.</p></div>
+            <div class="kit-card"><h3>10. Family Learning Map</h3><p>A big-picture tool that helps you see how small interests grow into a rich, connected learning life over time.</p></div>
+          </div>
+        </div>
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1596495578065-6e0763fa1178?w=900" alt="Child doing hands-on STEM activity" style="border-radius:20px; margin-bottom:18px; aspect-ratio:4/3; object-fit:cover; width:100%;" />
+          <h3>Built for real family life</h3>
+          <p class="muted">This is not a giant printable bundle you feel guilty about. It is not a rigid curriculum map. It is not an AI tutor replacing your involvement. It is a practical toolkit meant to reduce friction and help learning feel more alive.</p>
+          <ul class="clean">
+            <li>Use one page at a time</li>
+            <li>Start with one kid and one live interest</li>
+            <li>Shape projects without overbuilding them</li>
+            <li>Use AI as support, not the center</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-alt">
+      <div class="wrap author-grid">
+        <div class="author-image">
+          <img src="https://images.unsplash.com/photo-1609220136736-443140cffec6?w=900" alt="Family outdoors learning in nature" />
+        </div>
+        <div class="card">
+          <div class="eyebrow">What Changes With the Kit</div>
+          <h2>You stop reinventing the wheel every week</h2>
+          <p>Without practical tools, even a good philosophy can stay abstract. You know what you want learning to feel like, but when real life hits, it is easy to lose the thread.</p>
+          <p class="muted">The kit gives you a repeatable rhythm: notice the spark, shape the next step, do something real, reflect, and keep going. That means less parent overwhelm, less second-guessing, and more actual movement.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="buy" class="section-soft">
+      <div class="wrap offer-grid">
+        <div class="offer-image">
+          <img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=900" alt="Curious child exploring" />
+        </div>
+        <div class="offer-box">
+          <div class="eyebrow">Today’s Offer</div>
+          <h2>Add the full AI-Powered Curiosity Learning Kit</h2>
+          <div class="stack-grid">
+            <div class="stack-item"><h3>10 practical tools</h3><p>Everything from prompts and planners to reflection tools and a big-picture learning map.</p></div>
+            <div class="stack-item"><h3>Instant digital access</h3><p>Start using it right away without waiting, printing everything, or overthinking the perfect setup.</p></div>
+            <div class="stack-item"><h3>Made to work with the ebook</h3><p>The ebook gives you the playbook. This gives you the pages, prompts, and tools that make it usable.</p></div>
+            <div class="stack-item"><h3>Low-risk next step</h3><p>A clean, practical upgrade for families who want implementation, not just inspiration.</p></div>
+          </div>
+          <div class="price-box">
+            <p class="muted">One-time payment</p>
+            <div class="price-tag">$29</div>
+            <p class="muted">A practical toolkit to help curiosity turn into real learning — without school-at-home pressure.</p>
+            <div class="cta-row"><a class="button primary" href="#">Yes — Add the Kit for $29</a></div>
+          </div>
+          <div class="guarantee">
+            <h3>30-Day Money-Back Guarantee</h3>
+            <p>Go through the kit, use the tools, and if it does not give you a clearer, calmer, more practical way to support curiosity-driven learning in your family, ask for your money back within 30 days.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-alt">
+      <div class="wrap">
+        <div class="eyebrow">FAQ</div>
+        <h2>Questions parents are usually asking here</h2>
+        <div class="faq-grid">
+          <div class="faq-item"><h3>Do I need to use all 10 tools?</h3><p>No. The point is not to complete everything. The point is to have the right tool when you need it. Start with one live interest and one useful page.</p></div>
+          <div class="faq-item"><h3>Is this only for homeschoolers?</h3><p>No. It is especially useful for homeschool families, but it also fits parents who want richer learning outside school and a more curiosity-driven home rhythm.</p></div>
+          <div class="faq-item"><h3>Will this make my child spend more time on screens?</h3><p>Not if you use it the way it is designed. The goal is to use AI behind the scenes to support you, while your child spends more time noticing, discussing, building, exploring, and creating.</p></div>
+          <div class="faq-item"><h3>Do I need to be good with AI?</h3><p>No. The prompt library and guides are built for normal humans. If you can copy, paste, and ask a question, you can use this.</p></div>
+          <div class="faq-item"><h3>Why offer this right after the ebook?</h3><p>Because this is the natural next step. The ebook helps you think differently. The kit helps you put that shift into motion immediately.</p></div>
+          <div class="faq-item"><h3>What if it is not a fit?</h3><p>That is exactly why there is a 30-day guarantee. This should feel easy to say yes to and low-risk to try.</p></div>
+        </div>
+        <div class="cta-row" style="justify-content:center; margin-top:28px;"><a class="button primary" href="#buy">Yes — Add the Kit for $29</a></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    AI-Powered Curiosity Learning Kit • GHL-ready upsell page draft
+  </footer>
+</body>
+</html>
