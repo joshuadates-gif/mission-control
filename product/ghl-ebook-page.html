@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Curiosity-Driven Classroom Using AI</title>
+  <meta name="description" content="A $7 ebook for parents and educators who want to use AI to support curiosity-driven learning without turning learning into more screen time or more pressure." />
+  <style>
+    :root {
+      --bg: #f7f4ee;
+      --cream: #fffdf9;
+      --cream-2: #fff6ea;
+      --ink: #1f2937;
+      --muted: #5b6472;
+      --blue: #3b82f6;
+      --blue-dark: #1d4ed8;
+      --gold: #d97706;
+      --gold-soft: #fff0d9;
+      --mint: #ebf8f2;
+      --lav: #f4f0ff;
+      --rose: #fff0ea;
+      --line: #e7dfd3;
+      --shadow: 0 18px 45px rgba(15,23,42,.08);
+      --shadow-lg: 0 28px 70px rgba(15,23,42,.12);
+      --max: 1160px;
+      --radius: 28px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: linear-gradient(180deg, #f7f4ee 0%, #fcfaf6 100%);
+      line-height: 1.6;
+    }
+    img { max-width: 100%; display: block; }
+    .wrap { width: min(var(--max), calc(100% - 28px)); margin: 0 auto; }
+    section { padding: 84px 0; }
+    .section-alt { background: rgba(255,255,255,.45); }
+    .section-soft { background: linear-gradient(180deg, rgba(255,240,217,.45) 0%, rgba(255,255,255,.2) 100%); }
+    .eyebrow {
+      display: inline-block; font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: .14em;
+      padding: 8px 12px; border-radius: 999px; background: rgba(217,119,6,.12); color: var(--gold); margin-bottom: 18px;
+    }
+    h1,h2,h3 { line-height: 1.05; margin: 0 0 16px; }
+    h1 { font-size: clamp(2.8rem, 5.8vw, 5.2rem); font-weight: 900; letter-spacing: -0.04em; max-width: 11ch; }
+    h2 { font-size: clamp(2rem, 3vw, 3rem); }
+    h3 { font-size: 1.2rem; }
+    p { margin: 0 0 14px; }
+    .muted { color: var(--muted); }
+    .hero {
+      padding: 86px 0 64px;
+      background:
+        radial-gradient(circle at 15% 12%, rgba(255,255,255,.35), transparent 26%),
+        radial-gradient(circle at 90% 10%, rgba(59,130,246,.16), transparent 25%),
+        radial-gradient(circle at 70% 30%, rgba(217,119,6,.16), transparent 28%),
+        linear-gradient(135deg, #fff2df 0%, #f6f0ff 48%, #eef6ff 100%);
+      overflow: hidden;
+    }
+    .hero-grid, .two-col, .offer-grid, .author-grid { display:grid; grid-template-columns: 1.05fr .95fr; gap: 30px; align-items: center; }
+    .lead { font-size: 1.16rem; color: var(--muted); max-width: 760px; }
+    .cta-row { display:flex; flex-wrap:wrap; gap:14px; margin:24px 0 18px; }
+    .button {
+      display:inline-flex; align-items:center; justify-content:center; gap:10px; padding:15px 24px; border-radius:16px;
+      text-decoration:none; font-weight:800; transition:.2s ease;
+    }
+    .button.primary { background: var(--blue); color: white; box-shadow: var(--shadow); }
+    .button.primary:hover { background: var(--blue-dark); transform: translateY(-1px); }
+    .button.secondary { background: rgba(255,255,255,.78); color: var(--ink); border:1px solid rgba(255,255,255,.8); }
+    .pill-row { display:flex; flex-wrap:wrap; gap:10px; margin-top:16px; }
+    .pill { padding:8px 12px; border-radius:999px; background: rgba(255,255,255,.76); border:1px solid rgba(255,255,255,.85); color: var(--muted); font-size:.95rem; }
+    .card { background: var(--cream); border:1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); padding: 28px; }
+    .hero-image, .author-image, .offer-image { border-radius: 28px; overflow: hidden; box-shadow: var(--shadow-lg); border:1px solid var(--line); aspect-ratio: 4 / 4.3; }
+    .hero-image img, .author-image img, .offer-image img { width:100%; height:100%; object-fit:cover; }
+    .pain-grid, .chapter-grid, .faq-grid, .stack-grid { display:grid; gap:18px; }
+    .pain-grid { grid-template-columns: repeat(3, 1fr); }
+    .pain-card, .faq-item, .stack-item, .chapter-card { border-radius: 24px; padding: 24px; border:1px solid var(--line); box-shadow: 0 10px 30px rgba(15,23,42,.04); }
+    .pain-card:nth-child(1), .stack-item:nth-child(1), .chapter-card:nth-child(1), .chapter-card:nth-child(5) { background: var(--gold-soft); }
+    .pain-card:nth-child(2), .stack-item:nth-child(2), .chapter-card:nth-child(2), .chapter-card:nth-child(6) { background: var(--mint); }
+    .pain-card:nth-child(3), .stack-item:nth-child(3), .chapter-card:nth-child(3), .chapter-card:nth-child(7) { background: var(--lav); }
+    .chapter-card:nth-child(4), .stack-item:nth-child(4), .chapter-card:nth-child(8) { background: var(--rose); }
+    .pain-card p, .faq-item p, .stack-item p, .chapter-card p { color: var(--muted); }
+    .chapter-grid { grid-template-columns: repeat(2, 1fr); }
+    .stack-grid { grid-template-columns: 1fr; }
+    .offer-box {
+      background: linear-gradient(180deg, #fffdf9 0%, #eef6ff 100%);
+      border:1px solid var(--line); border-radius:30px; box-shadow: var(--shadow); padding: 34px;
+    }
+    .price-box { background:white; border:1px solid var(--line); border-radius:22px; padding:26px; margin-top: 18px; }
+    .price-tag { font-size: 3.2rem; font-weight: 900; line-height: 1; margin: 8px 0 12px; }
+    .strike { text-decoration: line-through; color: #8b95a7; }
+    .guarantee { background:white; border:1px solid var(--line); border-radius:24px; padding: 24px; margin-top: 18px; }
+    .faq-grid { grid-template-columns: 1fr 1fr; }
+    .floating-cta { position: fixed; right: 16px; bottom: 16px; z-index: 40; box-shadow: var(--shadow-lg); }
+    .floating-cta .button { border-radius: 999px; }
+    footer { padding: 28px 0 92px; text-align:center; color: var(--muted); font-size:.95rem; }
+    @media (max-width: 980px) {
+      .hero-grid, .two-col, .offer-grid, .author-grid, .pain-grid, .chapter-grid, .faq-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 720px) {
+      section { padding: 62px 0; }
+      .floating-cta { left: 12px; right: 12px; bottom: 12px; }
+      .floating-cta .button { width: 100%; }
+      footer { padding-bottom: 100px; }
+      .card, .offer-box, .price-box, .guarantee, .pain-card, .faq-item, .stack-item, .chapter-card { padding: 20px; }
+      h1 { max-width: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="floating-cta"><a class="button primary" href="#buy">Get the Ebook • $7</a></div>
+
+  <header class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="eyebrow">Digital Ebook • $7</div>
+        <h1>Use AI to Make Learning More Curious, More Human, and Way Less Draining</h1>
+        <p class="lead">Curiosity-Driven Classroom Using AI is a practical guide for parents and educators who want to use AI to support deeper learning — without turning childhood into more screens, more pressure, or more school-at-home.</p>
+        <div class="cta-row">
+          <a class="button primary" href="#buy">Get Instant Access for $7</a>
+          <a class="button secondary" href="#chapters">See What’s Inside</a>
+        </div>
+        <div class="pill-row">
+          <span class="pill">Instant digital access</span>
+          <span class="pill">8 practical chapters</span>
+          <span class="pill">Parent + homeschool friendly</span>
+          <span class="pill">30-day guarantee</span>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="https://images.unsplash.com/photo-1513258496099-48168024aec0?w=1200" alt="Family learning together" />
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section-alt">
+      <div class="wrap">
+        <div class="eyebrow">Pain Points</div>
+        <h2>Sound familiar?</h2>
+        <p class="lead">A lot of parents can feel that AI is changing education fast — but they don’t want to either ignore it or hand everything over to it.</p>
+        <div class="pain-grid">
+          <div class="pain-card"><h3>You want help, not more chaos</h3><p>You know AI could save time and spark ideas, but right now it mostly feels like one more thing to figure out.</p></div>
+          <div class="pain-card"><h3>You don’t want school at home</h3><p>You want your kid to stay curious and engaged, not trapped in another rigid, lifeless system dressed up with tech.</p></div>
+          <div class="pain-card"><h3>You need a real starting point</h3><p>You don’t need endless theory. You need a practical, grounded way to use AI that still keeps the human relationship at the center.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="chapters" class="section-soft">
+      <div class="wrap two-col">
+        <div>
+          <div class="eyebrow">What’s Inside</div>
+          <h2>8 chapters that walk you from philosophy to practical use</h2>
+          <p class="muted">This isn’t a fluffy AI explainer. It’s meant to help you think better, plan better, and support your kid’s learning in a more alive way.</p>
+          <div class="chapter-grid">
+            <div class="chapter-card"><h3>Chapter 1: Why Curiosity Matters More Than Compliance</h3><p>Why real learning starts with fascination, questions, and lived experience — and why that matters even more in the AI era.</p></div>
+            <div class="chapter-card"><h3>Chapter 2: What AI Is Good For (and What It Should Never Replace)</h3><p>A clear framework for using AI as a support tool without letting it replace relationship, wonder, or direct experience.</p></div>
+            <div class="chapter-card"><h3>Chapter 3: Turning Questions Into Learning Paths</h3><p>How to take a kid’s random question or obsession and turn it into projects, conversations, and meaningful learning.</p></div>
+            <div class="chapter-card"><h3>Chapter 4: Practical AI Prompts for Parents and Teachers</h3><p>Real prompts you can use to brainstorm projects, connect subjects, generate discussion questions, and reduce planning friction.</p></div>
+            <div class="chapter-card"><h3>Chapter 5: Structure Without Draining the Life Out of Learning</h3><p>How to create rhythm, support, and follow-through without recreating a classroom at your kitchen table.</p></div>
+            <div class="chapter-card"><h3>Chapter 6: Helping Kids Think, Not Just Consume</h3><p>How to use AI in ways that deepen thought, conversation, synthesis, and creativity instead of outsourcing the hard parts.</p></div>
+            <div class="chapter-card"><h3>Chapter 7: Real-World Curiosity in Action</h3><p>Examples and use cases that show what curiosity-driven, AI-supported learning can look like in real family life.</p></div>
+            <div class="chapter-card"><h3>Chapter 8: A Simpler Way Forward</h3><p>A grounded closing framework that helps you start small, stay human, and make learning feel more connected again.</p></div>
+          </div>
+        </div>
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=900" alt="Curious child learning" style="border-radius:20px; margin-bottom:18px; aspect-ratio:4/3; object-fit:cover; width:100%;" />
+          <h3>Short, useful, and easy to act on</h3>
+          <p class="muted">The goal is not to bury you in theory. It’s to help you understand the shift, feel more confident, and actually use AI in a way that supports your kid’s learning life.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-alt">
+      <div class="wrap author-grid">
+        <div class="author-image">
+          <img src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?w=900" alt="Parent teaching child at home" />
+        </div>
+        <div class="card">
+          <div class="eyebrow">About the Author</div>
+          <h2>From classroom teacher to homeschool dad</h2>
+          <p>I spent years as a teacher, and over time I saw how often school trained kids to perform instead of really learn. Later, as a homeschool dad, that question got much more personal: how do we help our kids stay curious, think deeply, and actually enjoy learning without just recreating school at home?</p>
+          <p class="muted">This ebook came out of that tension. I’m not interested in AI because it’s trendy. I’m interested in how it can help parents and educators remove friction, support real curiosity, and make learning feel more human again.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="buy" class="section-soft">
+      <div class="wrap offer-grid">
+        <div class="offer-image">
+          <img src="https://images.unsplash.com/photo-1484820540004-14229fe36ca4?w=900" alt="Warm family moment" />
+        </div>
+        <div class="offer-box">
+          <div class="eyebrow">Value Stack</div>
+          <h2>Everything you get today</h2>
+          <div class="stack-grid">
+            <div class="stack-item"><h3>The full 8-chapter ebook</h3><p>A complete practical guide for using AI in curiosity-driven learning.</p></div>
+            <div class="stack-item"><h3>Parent-ready prompts and ideas</h3><p>Use the examples and frameworks inside to reduce planning time and go from interest to action faster.</p></div>
+            <div class="stack-item"><h3>A calmer, more human framework for AI</h3><p>So you can use the tool without letting it hijack the point of learning.</p></div>
+            <div class="stack-item"><h3>Instant digital access</h3><p>Download it and start using it right away.</p></div>
+          </div>
+          <div class="price-box">
+            <p class="muted">Total value: <span class="strike">$27</span></p>
+            <div class="price-tag">$7</div>
+            <p class="muted">Simple, low-risk, easy-to-buy entry point.</p>
+            <div class="cta-row"><a class="button primary" href="#">Get the Ebook for $7</a></div>
+          </div>
+          <div class="guarantee">
+            <h3>30-Day Money-Back Guarantee</h3>
+            <p>Read it, use it, and if it doesn’t give you a clearer and more practical way to think about AI in your family’s learning life, ask for your money back within 30 days.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-alt">
+      <div class="wrap">
+        <div class="eyebrow">FAQ</div>
+        <h2>Frequently asked questions</h2>
+        <div class="faq-grid">
+          <div class="faq-item"><h3>Is this for homeschoolers only?</h3><p>No. It’s especially useful for homeschool families, but it also fits parents who want richer learning outside school and educators who want a more curiosity-driven approach.</p></div>
+          <div class="faq-item"><h3>Do I need to be techy?</h3><p>No. This is written for normal humans, not AI power users. If you can copy and paste a prompt, you can use what’s here.</p></div>
+          <div class="faq-item"><h3>Is this more about AI or about learning?</h3><p>Learning first. AI is only useful if it supports deeper thinking, more meaningful projects, and less friction for real people.</p></div>
+          <div class="faq-item"><h3>How fast can I use it?</h3><p>Immediately. It’s designed to be short, readable, and useful fast — not something that takes weeks to work through.</p></div>
+          <div class="faq-item"><h3>Will this increase screen time?</h3><p>Not if you use it the way it’s intended. The goal is to use AI behind the scenes to support you, while your kid spends more time noticing, building, discussing, making, and exploring.</p></div>
+          <div class="faq-item"><h3>Why is it only $7?</h3><p>Because it’s meant to be an easy first yes. A practical little entry-point product, not a giant high-ticket offer.</p></div>
+        </div>
+        <div class="cta-row" style="justify-content:center; margin-top:28px;"><a class="button primary" href="#buy">Get Instant Access for $7</a></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    Curiosity-Driven Classroom Using AI • GHL-ready ebook sales page draft
+  </footer>
+</body>
+</html>
