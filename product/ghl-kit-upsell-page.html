@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI-Powered Curiosity Learning Kit</title>
-  <meta name="description" content="A $29 practical toolkit that helps parents turn curiosity into projects, conversations, real-world learning, and calmer rhythm at home." />
+  <title>AI-Powered Curiosity Learning Kit — Premium Edition</title>
+  <meta name="description" content="A $29 premium family learning system that helps you raise fearless thinkers, creative problem-solvers, and lifelong learners — one spark at a time." />
   <style>
     :root {
       --bg: #f7f4ee;
@@ -73,17 +73,18 @@
     .card { background: var(--cream); border:1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); padding: 28px; }
     .hero-image, .author-image, .offer-image { border-radius: 28px; overflow: hidden; box-shadow: var(--shadow-lg); border:1px solid var(--line); aspect-ratio: 4 / 4.3; }
     .hero-image img, .author-image img, .offer-image img { width:100%; height:100%; object-fit:cover; }
-    .pain-grid, .kit-grid, .faq-grid, .stack-grid { display:grid; gap:18px; }
+    .pain-grid, .kit-grid, .faq-grid, .stack-grid, .value-grid { display:grid; gap:18px; }
     .pain-grid { grid-template-columns: repeat(3, 1fr); }
     .kit-grid { grid-template-columns: repeat(2, 1fr); }
-    .pain-card, .faq-item, .stack-item, .kit-card {
+    .value-grid { grid-template-columns: repeat(2, 1fr); }
+    .pain-card, .faq-item, .stack-item, .kit-card, .value-card {
       border-radius: 24px; padding: 24px; border:1px solid var(--line); box-shadow: 0 10px 30px rgba(15,23,42,.04);
     }
-    .pain-card:nth-child(1), .stack-item:nth-child(1), .kit-card:nth-child(1), .kit-card:nth-child(5), .kit-card:nth-child(9) { background: var(--gold-soft); }
-    .pain-card:nth-child(2), .stack-item:nth-child(2), .kit-card:nth-child(2), .kit-card:nth-child(6), .kit-card:nth-child(10) { background: var(--mint); }
-    .pain-card:nth-child(3), .stack-item:nth-child(3), .kit-card:nth-child(3), .kit-card:nth-child(7) { background: var(--lav); }
-    .kit-card:nth-child(4), .stack-item:nth-child(4), .kit-card:nth-child(8) { background: var(--rose); }
-    .pain-card p, .faq-item p, .stack-item p, .kit-card p { color: var(--muted); }
+    .pain-card:nth-child(1), .stack-item:nth-child(1), .kit-card:nth-child(1), .kit-card:nth-child(5), .kit-card:nth-child(9), .value-card:nth-child(1), .value-card:nth-child(5), .value-card:nth-child(9) { background: var(--gold-soft); }
+    .pain-card:nth-child(2), .stack-item:nth-child(2), .kit-card:nth-child(2), .kit-card:nth-child(6), .kit-card:nth-child(10), .value-card:nth-child(2), .value-card:nth-child(6), .value-card:nth-child(10) { background: var(--mint); }
+    .pain-card:nth-child(3), .stack-item:nth-child(3), .kit-card:nth-child(3), .kit-card:nth-child(7), .value-card:nth-child(3), .value-card:nth-child(7) { background: var(--lav); }
+    .kit-card:nth-child(4), .stack-item:nth-child(4), .kit-card:nth-child(8), .value-card:nth-child(4), .value-card:nth-child(8) { background: var(--rose); }
+    .pain-card p, .faq-item p, .stack-item p, .kit-card p, .value-card p { color: var(--muted); }
     .offer-box {
       background: linear-gradient(180deg, #fffdf9 0%, #eef6ff 100%);
       border:1px solid var(--line); border-radius:30px; box-shadow: var(--shadow); padding: 34px;
@@ -97,42 +98,43 @@
     .floating-cta .button { border-radius: 999px; }
     ul.clean { padding-left: 18px; margin: 0; }
     ul.clean li { margin: 0 0 10px; color: var(--muted); }
+    .number { font-size: .9rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; display:block; }
     footer { padding: 28px 0 92px; text-align:center; color: var(--muted); font-size:.95rem; }
     @media (max-width: 980px) {
-      .hero-grid, .two-col, .offer-grid, .author-grid, .pain-grid, .kit-grid, .faq-grid { grid-template-columns: 1fr; }
+      .hero-grid, .two-col, .offer-grid, .author-grid, .pain-grid, .kit-grid, .faq-grid, .value-grid { grid-template-columns: 1fr; }
     }
     @media (max-width: 720px) {
       section { padding: 62px 0; }
       .floating-cta { left: 12px; right: 12px; bottom: 12px; }
       .floating-cta .button { width: 100%; }
       footer { padding-bottom: 100px; }
-      .card, .offer-box, .price-box, .guarantee, .pain-card, .faq-item, .stack-item, .kit-card { padding: 20px; }
+      .card, .offer-box, .price-box, .guarantee, .pain-card, .faq-item, .stack-item, .kit-card, .value-card { padding: 20px; }
       h1 { max-width: none; }
     }
   </style>
 </head>
 <body>
-  <div class="floating-cta"><a class="button primary" href="#buy">Add the Kit • $29</a></div>
+  <div class="floating-cta"><a class="button primary" href="#buy">Add the Premium Kit • $29</a></div>
 
   <header class="hero">
     <div class="wrap hero-grid">
       <div>
-        <div class="eyebrow">One-Time Upsell • $29</div>
+        <div class="eyebrow">One-Time Upsell • Premium Edition • $29</div>
         <h1>You just got the playbook — now get the tools.</h1>
-        <p class="lead">The ebook gives you the mindset. The AI-Powered Curiosity Learning Kit gives you the ready-to-use tools that help you turn curiosity into projects, conversations, real-world learning, and a calmer rhythm at home.</p>
+        <p class="lead">The ebook gave you the big shift. The <strong>AI-Powered Curiosity Learning Kit — Enhanced Premium Edition</strong> gives you the complete family learning system: research-backed guidance, ready-to-use activities, question tools, coaching scripts, seasonal support, nature missions, AI prompts, and more.</p>
         <div class="cta-row">
-          <a class="button primary" href="#buy">Yes — Add the Kit for $29</a>
-          <a class="button secondary" href="#tools">See the 10 Tools</a>
+          <a class="button primary" href="#buy">Yes — Add the Premium Kit for $29</a>
+          <a class="button secondary" href="#inside">See Everything Inside</a>
         </div>
         <div class="pill-row">
-          <span class="pill">10 practical tools</span>
-          <span class="pill">Instant digital access</span>
-          <span class="pill">Built for homeschool + family learning</span>
+          <span class="pill">Complete family learning system</span>
+          <span class="pill">10 core components + bonus</span>
+          <span class="pill">$229 total value</span>
           <span class="pill">30-day guarantee</span>
         </div>
       </div>
       <div class="hero-image">
-        <img src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?w=1200" alt="Parent and child learning at a computer together" />
+        <img src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?w=1200" alt="Parent and child learning together at a computer" />
       </div>
     </div>
   </header>
@@ -140,111 +142,130 @@
   <main>
     <section class="section-alt">
       <div class="wrap">
-        <div class="eyebrow">Why This Upsell Matters</div>
-        <h2>The ebook shows you the path. The kit helps you walk it this week.</h2>
-        <p class="lead">Most parents don’t need more theory. They need a simple way to notice what’s alive in their kid, shape it into something real, and keep momentum going without turning home learning into school-at-home.</p>
+        <div class="eyebrow">What Makes This Different</div>
+        <h2>Raise fearless thinkers, creative problem-solvers, and lifelong learners — one spark at a time.</h2>
+        <p class="lead">This is not just a printable pack. It is a complete curiosity-building system designed to help you turn your home into a curiosity-rich learning environment without rigid curriculum, expensive tutors, or hours of prep.</p>
         <div class="pain-grid">
-          <div class="pain-card"><h3>You have the big picture — but need the actual tools</h3><p>You already get the philosophy. What helps now is having usable prompts, planners, and worksheets that make the next step obvious.</p></div>
-          <div class="pain-card"><h3>You want structure without losing the life in it</h3><p>You do not want chaos, but you also do not want rigid curriculum. You want something usable in the middle.</p></div>
-          <div class="pain-card"><h3>You want to use AI without handing learning over to a screen</h3><p>The kit keeps AI in the right role: behind-the-scenes support for you, not a substitute for relationship, conversation, or real-world experience.</p></div>
+          <div class="pain-card"><h3>Research-backed, not random</h3><p>The kit is built around the science of curiosity, deeper learning, better retention, resilience, creativity, and stronger family connection.</p></div>
+          <div class="pain-card"><h3>Built for real families</h3><p>You do not need a dedicated classroom, giant budget, or perfect homeschool setup. You need practical tools that work in actual daily life.</p></div>
+          <div class="pain-card"><h3>More than inspiration</h3><p>The premium edition gives you scripts, activities, question tools, seasonal guides, AI prompts, and a full system you can use right away.</p></div>
         </div>
       </div>
     </section>
 
-    <section id="tools" class="section-soft">
+    <section id="inside" class="section-soft">
       <div class="wrap two-col">
         <div>
-          <div class="eyebrow">The 10 Tools</div>
-          <h2>Everything inside the AI-Powered Curiosity Learning Kit</h2>
-          <p class="muted">This is the practical layer. The pages you come back to when a new interest appears, a project stalls out, or you just need help getting from “that’s interesting” to “we actually did something with it.”</p>
-          <div class="kit-grid">
-            <div class="kit-card"><h3>1. Welcome Guide</h3><p>A grounding overview so you know exactly what this kit is for and how to use it without overcomplicating things.</p></div>
-            <div class="kit-card"><h3>2. Quick Start Guide</h3><p>The fastest path to action when you want to start this week, not after reading everything perfectly.</p></div>
-            <div class="kit-card"><h3>3. Family Curiosity Prompts</h3><p>Questions that help you notice what your child is genuinely drawn to beneath the surface topic.</p></div>
-            <div class="kit-card"><h3>4. AI Prompt Library</h3><p>Ready-to-use prompts that help you brainstorm projects, books, field trips, activities, and next steps faster.</p></div>
-            <div class="kit-card"><h3>5. Interest-to-Project Planner</h3><p>A simple bridge from spark to doable project so ideas stop dying as soon as the week gets busy.</p></div>
-            <div class="kit-card"><h3>6. Structure Without School Guide</h3><p>A calmer framework for creating rhythm and follow-through without recreating a classroom at home.</p></div>
-            <div class="kit-card"><h3>7. Project and Experience Planning Sheets</h3><p>Pages that help you shape materials, outings, activities, and simple project flow without mental clutter.</p></div>
-            <div class="kit-card"><h3>8. Role Model Study Template</h3><p>A way to help your child learn through admired people, stories, examples, and real lives they connect with.</p></div>
-            <div class="kit-card"><h3>9. Reflection and Synthesis Prompts</h3><p>Prompts that help learning stick so good experiences turn into insight, ownership, and better next questions.</p></div>
-            <div class="kit-card"><h3>10. Family Learning Map</h3><p>A big-picture tool that helps you see how small interests grow into a rich, connected learning life over time.</p></div>
+          <div class="eyebrow">What’s Inside the Premium Edition</div>
+          <h2>The real kit now includes a complete $229 value stack</h2>
+          <p class="muted">Here is what the PDF actually contains now: a deeper, more premium system than the earlier version, with layered support for home environment, questions, activities, coaching, seasons, nature, AI, and interest sparks.</p>
+          <div class="value-grid">
+            <div class="value-card"><h3>Complete Curiosity Framework Guide</h3><p>The big-picture guide that explains the science of curiosity, why it matters, and how to support it intentionally.</p><p><strong>$47 value</strong></p></div>
+            <div class="value-card"><h3>10 Ready-to-Use Hands-On Activities</h3><p>Immediate projects and experiences you can use to get momentum without overplanning everything.</p><p><strong>$29 value</strong></p></div>
+            <div class="value-card"><h3>Age-Adaptive Question Bank</h3><p>Questions that help kids go deeper, think better, and stay engaged at different developmental stages.</p><p><strong>$19 value</strong></p></div>
+            <div class="value-card"><h3>Year-Round Curiosity Challenge Calendar</h3><p>Seasonal prompts and rhythms that keep curiosity alive all year instead of only when inspiration strikes.</p><p><strong>$15 value</strong></p></div>
+            <div class="value-card"><h3>Parent Coaching Playbook & Scripts</h3><p>Words for the moments that matter — how to respond, guide, encourage, and coach without killing the spark.</p><p><strong>$25 value</strong></p></div>
+            <div class="value-card"><h3>Nature & Outdoor Exploration Guide</h3><p>Practical missions and invitations that help curiosity move out of the house and into the real world.</p><p><strong>$15 value</strong></p></div>
+            <div class="value-card"><h3>Screen Time Conversion Toolkit</h3><p>A smarter way to shift passive digital habits into active curiosity, exploration, and creation.</p><p><strong>$12 value</strong></p></div>
+            <div class="value-card"><h3>AI Prompt Library for Family Learning</h3><p>Prompt support that makes AI genuinely useful for family learning instead of just more screen noise.</p><p><strong>$19 value</strong></p></div>
+            <div class="value-card"><h3>Digital Curiosity Journal Templates</h3><p>Simple ways to capture questions, discoveries, observations, and sparks before they disappear.</p><p><strong>$19 value</strong></p></div>
+            <div class="value-card"><h3>BONUS: 100 Interest Sparks Collection</h3><p>A ready-made bank of curiosity starters for the days when you need a spark to get something going.</p><p><strong>$29 value</strong></p></div>
           </div>
         </div>
         <div class="card">
           <img src="https://images.unsplash.com/photo-1596495578065-6e0763fa1178?w=900" alt="Child doing hands-on STEM activity" style="border-radius:20px; margin-bottom:18px; aspect-ratio:4/3; object-fit:cover; width:100%;" />
-          <h3>Built for real family life</h3>
-          <p class="muted">This is not a giant printable bundle you feel guilty about. It is not a rigid curriculum map. It is not an AI tutor replacing your involvement. It is a practical toolkit meant to reduce friction and help learning feel more alive.</p>
-          <ul class="clean">
-            <li>Use one page at a time</li>
-            <li>Start with one kid and one live interest</li>
-            <li>Shape projects without overbuilding them</li>
-            <li>Use AI as support, not the center</li>
-          </ul>
+          <h3>From one-off ideas to a full learning environment</h3>
+          <p class="muted">The premium edition is not just “more pages.” It is a more complete operating system for curiosity-driven family learning. It helps you understand your child’s curiosity style, build a curiosity-rich home, ask better questions, guide projects, use seasons and nature well, and use AI as a learning superpower without letting it take over.</p>
         </div>
       </div>
     </section>
 
     <section class="section-alt">
-      <div class="wrap author-grid">
+      <div class="wrap two-col">
+        <div class="card">
+          <div class="eyebrow">Inside the Experience</div>
+          <h2>The new kit is organized like a complete learning journey</h2>
+          <p class="muted">The PDF now walks families through a richer sequence than before. It starts with the science of curiosity, helps you understand your child’s curiosity style, then moves into environment design, better questions, hands-on activities, seasonal support, screen-time conversion, parent coaching, nature exploration, AI support, and bonus interest sparks.</p>
+          <ul class="clean">
+            <li>The Science of Curiosity</li>
+            <li>Understanding Your Child’s Curiosity Style</li>
+            <li>Building a Curiosity-Rich Home Environment</li>
+            <li>The Question Toolkit</li>
+            <li>Hands-On Learning Activities</li>
+            <li>Curiosity Through the Seasons</li>
+            <li>Screen Time to Curiosity Time</li>
+            <li>The Parent’s Coaching Playbook</li>
+            <li>Nature & Outdoor Exploration Guide</li>
+            <li>Using AI as Your Family’s Learning Superpower</li>
+          </ul>
+        </div>
         <div class="author-image">
           <img src="https://images.unsplash.com/photo-1609220136736-443140cffec6?w=900" alt="Family outdoors learning in nature" />
-        </div>
-        <div class="card">
-          <div class="eyebrow">What Changes With the Kit</div>
-          <h2>You stop reinventing the wheel every week</h2>
-          <p>Without practical tools, even a good philosophy can stay abstract. You know what you want learning to feel like, but when real life hits, it is easy to lose the thread.</p>
-          <p class="muted">The kit gives you a repeatable rhythm: notice the spark, shape the next step, do something real, reflect, and keep going. That means less parent overwhelm, less second-guessing, and more actual movement.</p>
         </div>
       </div>
     </section>
 
-    <section id="buy" class="section-soft">
+    <section class="section-soft">
       <div class="wrap offer-grid">
         <div class="offer-image">
           <img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=900" alt="Curious child exploring" />
         </div>
         <div class="offer-box">
-          <div class="eyebrow">Today’s Offer</div>
-          <h2>Add the full AI-Powered Curiosity Learning Kit</h2>
+          <div class="eyebrow">Why People Say Yes Here</div>
+          <h2>You already bought the explanation. This gives you implementation.</h2>
           <div class="stack-grid">
-            <div class="stack-item"><h3>10 practical tools</h3><p>Everything from prompts and planners to reflection tools and a big-picture learning map.</p></div>
-            <div class="stack-item"><h3>Instant digital access</h3><p>Start using it right away without waiting, printing everything, or overthinking the perfect setup.</p></div>
-            <div class="stack-item"><h3>Made to work with the ebook</h3><p>The ebook gives you the playbook. This gives you the pages, prompts, and tools that make it usable.</p></div>
-            <div class="stack-item"><h3>Low-risk next step</h3><p>A clean, practical upgrade for families who want implementation, not just inspiration.</p></div>
-          </div>
-          <div class="price-box">
-            <p class="muted">One-time payment</p>
-            <div class="price-tag">$29</div>
-            <p class="muted">A practical toolkit to help curiosity turn into real learning — without school-at-home pressure.</p>
-            <div class="cta-row"><a class="button primary" href="#">Yes — Add the Kit for $29</a></div>
-          </div>
-          <div class="guarantee">
-            <h3>30-Day Money-Back Guarantee</h3>
-            <p>Go through the kit, use the tools, and if it does not give you a clearer, calmer, more practical way to support curiosity-driven learning in your family, ask for your money back within 30 days.</p>
+            <div class="stack-item"><h3>You get the research and the real tools</h3><p>Not just the why of curiosity-driven learning, but the pages, prompts, scripts, and systems that help you use it.</p></div>
+            <div class="stack-item"><h3>You stop reinventing the wheel every week</h3><p>Instead of starting from zero every time your child gets interested in something new, you have a repeatable structure.</p></div>
+            <div class="stack-item"><h3>You make home feel more curiosity-rich</h3><p>From wonder corners to question tools to nature missions, the kit helps you shape the environment, not just the lesson.</p></div>
+            <div class="stack-item"><h3>You turn screen-time tension into learning energy</h3><p>The premium edition now includes a screen-time conversion toolkit and stronger AI support for real family use.</p></div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section-alt">
+    <section id="buy" class="section-alt">
+      <div class="wrap offer-grid">
+        <div class="offer-image">
+          <img src="https://images.unsplash.com/photo-1588075592446-265fd1e6e76f?w=1200" alt="Parent and child learning together" />
+        </div>
+        <div class="offer-box">
+          <div class="eyebrow">Today’s Upsell Offer</div>
+          <h2>Add the AI-Powered Curiosity Learning Kit — Enhanced Premium Edition</h2>
+          <div class="price-box">
+            <p class="muted">Total individual value</p>
+            <div class="strike" style="font-size:1.3rem; font-weight:700;">$229</div>
+            <p class="muted" style="margin-top:12px;">Your one-time upsell price</p>
+            <div class="price-tag">$29</div>
+            <p class="muted">A complete family learning system for a fraction of the individual component value.</p>
+            <div class="cta-row"><a class="button primary" href="#">Yes — Add the Premium Kit for $29</a></div>
+          </div>
+          <div class="guarantee">
+            <h3>30-Day Money-Back Guarantee</h3>
+            <p>Try the premium edition, use the tools, and if it does not help you create a more curiosity-rich, practical, and confidence-building learning rhythm in your family, ask for your money back within 30 days.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-soft">
       <div class="wrap">
         <div class="eyebrow">FAQ</div>
-        <h2>Questions parents are usually asking here</h2>
+        <h2>Questions this premium version answers</h2>
         <div class="faq-grid">
-          <div class="faq-item"><h3>Do I need to use all 10 tools?</h3><p>No. The point is not to complete everything. The point is to have the right tool when you need it. Start with one live interest and one useful page.</p></div>
-          <div class="faq-item"><h3>Is this only for homeschoolers?</h3><p>No. It is especially useful for homeschool families, but it also fits parents who want richer learning outside school and a more curiosity-driven home rhythm.</p></div>
-          <div class="faq-item"><h3>Will this make my child spend more time on screens?</h3><p>Not if you use it the way it is designed. The goal is to use AI behind the scenes to support you, while your child spends more time noticing, discussing, building, exploring, and creating.</p></div>
-          <div class="faq-item"><h3>Do I need to be good with AI?</h3><p>No. The prompt library and guides are built for normal humans. If you can copy, paste, and ask a question, you can use this.</p></div>
-          <div class="faq-item"><h3>Why offer this right after the ebook?</h3><p>Because this is the natural next step. The ebook helps you think differently. The kit helps you put that shift into motion immediately.</p></div>
-          <div class="faq-item"><h3>What if it is not a fit?</h3><p>That is exactly why there is a 30-day guarantee. This should feel easy to say yes to and low-risk to try.</p></div>
+          <div class="faq-item"><h3>Is this still just a digital kit?</h3><p>Yes, but it is now much more complete. It reads and functions more like a premium family learning system than a simple worksheet bundle.</p></div>
+          <div class="faq-item"><h3>How is this different from the ebook?</h3><p>The ebook gives you the perspective and philosophy. The premium kit gives you the practical system, activities, question tools, coaching scripts, seasonal rhythms, and implementation support.</p></div>
+          <div class="faq-item"><h3>Is this useful if my child is not “schooly”?</h3><p>Yes. In many ways that is exactly who it is for. The system is built to work with curiosity, not force compliance.</p></div>
+          <div class="faq-item"><h3>What if my child’s curiosity style is different from their sibling’s?</h3><p>That is built in now. The premium edition includes a section on the four curiosity archetypes so you can work with each child more intelligently.</p></div>
+          <div class="faq-item"><h3>Does this help with screen-time struggles?</h3><p>Yes. The updated kit explicitly includes a Screen Time Conversion Toolkit and stronger guidance for using AI and digital tools in a healthier way.</p></div>
+          <div class="faq-item"><h3>Why is the price only $29 if the value is $229?</h3><p>Because this is a one-time post-purchase upsell meant to help you say yes to implementation while your momentum is already alive.</p></div>
         </div>
-        <div class="cta-row" style="justify-content:center; margin-top:28px;"><a class="button primary" href="#buy">Yes — Add the Kit for $29</a></div>
+        <div class="cta-row" style="justify-content:center; margin-top:28px;"><a class="button primary" href="#buy">Yes — Add the Premium Kit for $29</a></div>
       </div>
     </section>
   </main>
 
   <footer>
-    AI-Powered Curiosity Learning Kit • GHL-ready upsell page draft
+    AI-Powered Curiosity Learning Kit — Enhanced Premium Edition • GHL-ready upsell page draft
   </footer>
 </body>
 </html>
