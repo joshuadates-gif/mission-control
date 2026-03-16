@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI-Powered Curiosity Learning Kit</title>
+  <meta name="description" content="Help your child learn deeply without recreating school at home. A practical digital toolkit for curiosity-driven family learning with AI as support, not replacement." />
+  <style>
+    :root {
+      --bg: #f7f4ee;
+      --paper: #fffdf9;
+      --ink: #1f2937;
+      --muted: #5b6472;
+      --accent: #3b82f6;
+      --accent-dark: #1d4ed8;
+      --warm: #d97706;
+      --line: #e7dfd3;
+      --success: #0f766e;
+      --max: 1120px;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: linear-gradient(180deg, #f7f4ee 0%, #fcfaf6 100%);
+      color: var(--ink);
+      line-height: 1.6;
+    }
+
+    .wrap {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .hero {
+      padding: 72px 0 56px;
+      background:
+        radial-gradient(circle at top right, rgba(59,130,246,.10), transparent 28%),
+        radial-gradient(circle at top left, rgba(217,119,6,.10), transparent 26%);
+    }
+
+    .eyebrow {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--warm);
+      background: rgba(217,119,6,.10);
+      padding: 8px 12px;
+      border-radius: 999px;
+      margin-bottom: 18px;
+    }
+
+    h1, h2, h3 {
+      line-height: 1.15;
+      margin: 0 0 16px;
+    }
+
+    h1 {
+      font-size: clamp(2.4rem, 5vw, 4.2rem);
+      max-width: 11ch;
+    }
+
+    h2 {
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      margin-bottom: 18px;
+    }
+
+    h3 {
+      font-size: 1.25rem;
+    }
+
+    p.lead {
+      font-size: 1.15rem;
+      color: var(--muted);
+      max-width: 760px;
+      margin: 0 0 28px;
+    }
+
+    .hero-grid,
+    .two-col {
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 36px;
+      align-items: center;
+    }
+
+    .card {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 28px;
+      box-shadow: 0 18px 45px rgba(15, 23, 42, 0.06);
+    }
+
+    .hero-card ul,
+    .checklist,
+    .bullets {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    .hero-card li,
+    .checklist li,
+    .bullets li {
+      margin: 10px 0;
+      color: var(--muted);
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin: 28px 0 18px;
+    }
+
+    .button {
+      display: inline-block;
+      text-decoration: none;
+      font-weight: 700;
+      padding: 15px 22px;
+      border-radius: 14px;
+      transition: .2s ease;
+    }
+
+    .button.primary {
+      background: var(--accent);
+      color: white;
+    }
+
+    .button.primary:hover { background: var(--accent-dark); }
+
+    .button.secondary {
+      border: 1px solid var(--line);
+      color: var(--ink);
+      background: white;
+    }
+
+    .mini-proof {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 16px;
+      color: var(--muted);
+      font-size: .95rem;
+    }
+
+    .pill {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 8px 12px;
+    }
+
+    section {
+      padding: 64px 0;
+    }
+
+    .section-head {
+      max-width: 760px;
+      margin-bottom: 30px;
+    }
+
+    .muted { color: var(--muted); }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+    }
+
+    .feature {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 22px;
+    }
+
+    .feature-number {
+      width: 36px;
+      height: 36px;
+      display: inline-grid;
+      place-items: center;
+      border-radius: 999px;
+      background: rgba(59,130,246,.12);
+      color: var(--accent-dark);
+      font-weight: 800;
+      margin-bottom: 14px;
+    }
+
+    .quote {
+      border-left: 4px solid var(--accent);
+      padding: 18px 20px;
+      background: rgba(59,130,246,.05);
+      border-radius: 0 16px 16px 0;
+      font-size: 1.05rem;
+    }
+
+    .offer {
+      background: linear-gradient(180deg, #fffdf9 0%, #f3f8ff 100%);
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      padding: 34px;
+      box-shadow: 0 18px 45px rgba(15, 23, 42, 0.06);
+    }
+
+    .price {
+      font-size: 2.2rem;
+      font-weight: 800;
+      margin: 8px 0 4px;
+    }
+
+    .small { font-size: .95rem; }
+
+    footer {
+      padding: 36px 0 56px;
+      color: var(--muted);
+      font-size: .95rem;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid,
+      .two-col,
+      .grid-3,
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 56px;
+      }
+
+      .card,
+      .offer,
+      .feature {
+        padding: 22px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="eyebrow">Curiosity-Driven Family Learning</div>
+        <h1>Help Your Child Learn Deeply — Without Recreating School at Home</h1>
+        <p class="lead">The <strong>AI-Powered Curiosity Learning Kit</strong> gives parents a simple, practical system for turning real interests into meaningful projects, experiences, and learning rhythms — with AI as support, not replacement.</p>
+        <div class="cta-row">
+          <a class="button primary" href="#offer">Get the Kit</a>
+          <a class="button secondary" href="#inside">See What’s Inside</a>
+        </div>
+        <div class="mini-proof">
+          <span class="pill">Digital download</span>
+          <span class="pill">Parent-friendly</span>
+          <span class="pill">Homeschool + worldschool friendly</span>
+          <span class="pill">AI as support, not replacement</span>
+        </div>
+      </div>
+      <div class="card hero-card">
+        <h3>What this helps you do</h3>
+        <ul>
+          <li>Turn real interests into projects and learning adventures</li>
+          <li>Use AI to save time without outsourcing your child’s thinking</li>
+          <li>Create structure without turning home into school</li>
+          <li>Guide deeper learning with less planning overwhelm</li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <div class="wrap two-col">
+        <div>
+          <div class="section-head">
+            <h2>You know your child is curious. You just need a better way to guide it.</h2>
+            <p class="muted">You see the questions, obsessions, rabbit trails, and sudden fascinations. But when it comes to turning that energy into meaningful learning, many parents feel stuck between rigid curriculum and total chaos.</p>
+          </div>
+          <ul class="checklist">
+            <li>I don’t want to recreate school at home.</li>
+            <li>I want my child to love learning, not just complete assignments.</li>
+            <li>I need some structure, but I don’t want rigid curriculum draining the life out of it.</li>
+            <li>I know AI could help, but I’m not sure how to use it well.</li>
+            <li>I don’t have hours to plan everything from scratch.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>The big idea</h3>
+          <p><strong>Your child does not need school-at-home to learn well.</strong></p>
+          <p class="muted">They need a way to follow curiosity into deeper questions, real projects, direct experiences, and meaningful conversations. And you need a practical way to guide that process without becoming a full-time curriculum designer.</p>
+          <p><strong>This is a curiosity-led family learning system.</strong></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="inside">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>What’s inside the AI-Powered Curiosity Learning Kit</h2>
+          <p class="muted">A practical set of tools to help you notice curiosity, support it, and turn it into real learning without overcomplicating your life.</p>
+        </div>
+        <div class="grid-2">
+          <div class="feature"><div class="feature-number">1</div><h3>Family Curiosity Prompts</h3><p class="muted">Use simple prompts to notice what your child is genuinely interested in so you can build from what is already alive.</p></div>
+          <div class="feature"><div class="feature-number">2</div><h3>AI Prompt Library for Parents</h3><p class="muted">Copy-and-paste prompts that help you turn a child’s interest into project ideas, field trips, discussions, maker activities, role model studies, and next steps.</p></div>
+          <div class="feature"><div class="feature-number">3</div><h3>Interest-to-Project Planning Templates</h3><p class="muted">Take a spark of curiosity and turn it into a real learning path without overcomplicating it.</p></div>
+          <div class="feature"><div class="feature-number">4</div><h3>Structure-Without-School Guide</h3><p class="muted">Create enough rhythm and scaffolding to keep things moving without recreating classroom learning at home.</p></div>
+          <div class="feature"><div class="feature-number">5</div><h3>Project and Experience Planning Sheets</h3><p class="muted">Plan mini-adventures, hands-on projects, interviews, experiments, and real-world learning experiences.</p></div>
+          <div class="feature"><div class="feature-number">6</div><h3>Role Model Study Template</h3><p class="muted">Help your child learn through fascinating lives, not just abstract information.</p></div>
+          <div class="feature"><div class="feature-number">7</div><h3>Reflection and Synthesis Prompts</h3><p class="muted">Help learning stick by noticing what surprised your child, what connected, and what they want to explore next.</p></div>
+          <div class="feature"><div class="feature-number">8</div><h3>Family Learning Map</h3><p class="muted">Create a living map of interests, projects, questions, and learning directions for your family.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap two-col">
+        <div>
+          <div class="section-head">
+            <h2>Why AI matters here</h2>
+            <p class="muted">Used badly, AI becomes another screen-based shortcut. Used well, it becomes a behind-the-scenes support tool that helps you brainstorm faster, reduce planning friction, connect ideas across subjects, and personalize learning around your child’s interests.</p>
+          </div>
+          <div class="quote">In this kit, <strong>AI supports the parent.</strong> It does not replace the relationship, conversation, or direct experience. The human part stays at the center.</div>
+        </div>
+        <div class="card">
+          <h3>A different model of learning</h3>
+          <ul class="bullets">
+            <li>fascination</li>
+            <li>experimentation</li>
+            <li>connection-making</li>
+            <li>storytelling</li>
+            <li>role models</li>
+            <li>building and creating</li>
+            <li>following questions</li>
+            <li>returning with deeper questions</li>
+          </ul>
+          <p class="muted">That is the spirit behind this kit.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Who it’s for</h2>
+          <p class="muted">This kit is for parents who want learning to feel more like exploration than compliance.</p>
+        </div>
+        <div class="grid-3">
+          <div class="feature"><h3>Homeschool families</h3><p class="muted">For parents who want a curiosity-driven approach without drowning in planning.</p></div>
+          <div class="feature"><h3>Worldschooling families</h3><p class="muted">For families who want flexible structure that can travel with them.</p></div>
+          <div class="feature"><h3>Enrichment-minded parents</h3><p class="muted">For parents who want to deepen learning outside school in a more human, connected way.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap two-col">
+        <div class="card">
+          <h3>Common concerns</h3>
+          <p><strong>“I’m not a teacher.”</strong><br><span class="muted">You do not need to be. This kit helps parents guide, notice, support, and scaffold — not perform school.</span></p>
+          <p><strong>“I’m not very techy.”</strong><br><span class="muted">That’s fine. The AI prompts are built to be simple and practical, even for beginners.</span></p>
+          <p><strong>“I don’t want my child on screens more.”</strong><br><span class="muted">Neither do we. The point is to use AI mostly as a planning and thinking support tool so your child can spend more time doing, exploring, making, reading, observing, and talking.</span></p>
+          <p><strong>“I need structure or we lose momentum.”</strong><br><span class="muted">Exactly. This kit is built around lightweight, usable structure — not rigid schedules.</span></p>
+        </div>
+        <div class="offer" id="offer">
+          <div class="eyebrow">Offer</div>
+          <h2>Get the AI-Powered Curiosity Learning Kit</h2>
+          <p class="muted">A practical digital toolkit to help you turn curiosity into meaningful learning — without turning home into school.</p>
+          <div class="price">$29</div>
+          <p class="small muted">Digital download • Best for parents of curious kids who want a more human, flexible way to learn</p>
+          <ul class="checklist">
+            <li>Curiosity prompts</li>
+            <li>AI prompt library</li>
+            <li>Planning templates</li>
+            <li>Structure-without-school guide</li>
+            <li>Reflection tools</li>
+            <li>Family learning map</li>
+          </ul>
+          <div class="cta-row">
+            <a class="button primary" href="https://link.fastpaydirect.com/payment-link/69b7249ff35c540e148329eb">Buy the Kit for $29</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="section-head">
+          <h2>More ways to get support</h2>
+          <p class="muted">If you want guided help beyond the core kit, you can now choose a trained AI assistant or the best-value bundle.</p>
+        </div>
+        <div class="grid-3">
+          <div class="feature">
+            <h3>AI-Powered Curiosity Learning Kit</h3>
+            <p class="muted">The core digital toolkit for turning interests into projects, conversations, and learning rhythm.</p>
+            <div class="price">$29</div>
+            <div class="cta-row"><a class="button primary" href="https://link.fastpaydirect.com/payment-link/69b7249ff35c540e148329eb">Buy the Kit</a></div>
+          </div>
+          <div class="feature">
+            <img src="https://media.istockphoto.com/id/2243455897/photo/preteen-girl-at-desk-solving-homework-with-ai-chatbot.webp?a=1&b=1&s=612x612&w=0&k=20&c=cDUS-d1h3R5YkvICftpQRJQ7Ocpb9l1DWGP80vlVP5Y=" alt="Preteen girl using an AI chatbot for learning support" style="width:100%; aspect-ratio:4/3; object-fit:cover; border-radius:18px; margin-bottom:16px;" />
+            <h3>Curiosity Coach</h3>
+            <p class="muted">A custom AI assistant trained on our framework that helps parents turn their kid’s curiosity into real learning plans.</p>
+            <div class="price">$19</div>
+            <div class="cta-row"><a class="button primary" href="https://link.fastpaydirect.com/payment-link/69b8714f942c7dd36efd0a22">Buy Curiosity Coach</a></div>
+          </div>
+          <div class="feature">
+            <img src="https://plus.unsplash.com/premium_photo-1661779153960-c8778734dd34?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fGxlYXJuaW5nJTIwdG9vbHMlMjBzdGFjayUyMGFuZCUyMGNvbXB1dGVyfGVufDB8fDB8fHww" alt="Learning tools bundle with computer" style="width:100%; aspect-ratio:4/3; object-fit:cover; border-radius:18px; margin-bottom:16px;" />
+            <h3>Kit + Coach Bundle</h3>
+            <p class="muted">Get the full Learning Kit plus Curiosity Coach together and save $9 versus buying them separately.</p>
+            <div class="price">$39</div>
+            <div class="cta-row"><a class="button primary" href="https://link.fastpaydirect.com/payment-link/69b8719b942c7dd36efd0a24">Buy the Bundle</a></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap card">
+        <h2>Start building a more curious learning life</h2>
+        <p class="muted">If you’ve been looking for a way to support your child’s learning without defaulting back to worksheets, rigid curriculum, or constant planning overwhelm, this was made for you.</p>
+        <p>You do not need to manufacture motivation. You do not need to recreate the classroom. You do not need to figure it all out from scratch.</p>
+        <p><strong>You just need a better way to notice curiosity, support it, and build from it.</strong></p>
+        <div class="cta-row">
+          <a class="button primary" href="https://link.fastpaydirect.com/payment-link/69b7249ff35c540e148329eb">Get the Kit</a>
+          <a class="button secondary" href="https://link.fastpaydirect.com/payment-link/69b8719b942c7dd36efd0a24">Get the Bundle</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      AI-Powered Curiosity Learning Kit landing page draft • Created in workspace for review and publishing.
+    </div>
+  </footer>
+</body>
+</html>
+r>
+</body>
+</html>
