@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Curiosity-Driven Learning</title>
+  <meta name="description" content="Helping families turn curiosity into real learning — with AI as support, not replacement." />
+  <style>
+    :root {
+      --bg: #f7f4ee;
+      --cream: #fffdf9;
+      --ink: #1f2937;
+      --muted: #5b6472;
+      --blue: #2563eb;
+      --blue-dark: #1d4ed8;
+      --gold: #d97706;
+      --gold-soft: #fff0d9;
+      --mint: #ebf8f2;
+      --lav: #f4f0ff;
+      --line: #e7dfd3;
+      --shadow: 0 18px 45px rgba(15,23,42,.08);
+      --shadow-lg: 0 28px 70px rgba(15,23,42,.12);
+      --max: 1160px;
+      --radius: 28px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: linear-gradient(180deg, #f7f4ee 0%, #fcfaf6 100%);
+      line-height: 1.6;
+    }
+    img { max-width: 100%; display: block; }
+    .wrap { width: min(var(--max), calc(100% - 28px)); margin: 0 auto; }
+    section { padding: 84px 0; }
+    .section-alt { background: rgba(255,255,255,.45); }
+    .section-soft { background: linear-gradient(180deg, rgba(255,240,217,.45) 0%, rgba(255,255,255,.2) 100%); }
+    .eyebrow {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .14em;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(217,119,6,.12);
+      color: var(--gold);
+      margin-bottom: 18px;
+    }
+    h1,h2,h3 { line-height: 1.05; margin: 0 0 16px; }
+    h1 { font-size: clamp(2.8rem, 5.8vw, 5rem); font-weight: 900; letter-spacing: -0.04em; max-width: 10ch; }
+    h2 { font-size: clamp(2rem, 3vw, 3rem); }
+    h3 { font-size: 1.25rem; }
+    p { margin: 0 0 14px; }
+    .muted { color: var(--muted); }
+    .lead { font-size: 1.16rem; color: var(--muted); max-width: 760px; }
+    .hero {
+      padding: 92px 0 68px;
+      background:
+        radial-gradient(circle at 15% 12%, rgba(255,255,255,.35), transparent 26%),
+        radial-gradient(circle at 90% 10%, rgba(59,130,246,.16), transparent 25%),
+        radial-gradient(circle at 70% 30%, rgba(217,119,6,.16), transparent 28%),
+        linear-gradient(135deg, #fff2df 0%, #f6f0ff 48%, #eef6ff 100%);
+      overflow: hidden;
+    }
+    .hero-grid, .about-grid { display:grid; grid-template-columns: 1.05fr .95fr; gap: 30px; align-items: center; }
+    .cta-row { display:flex; flex-wrap:wrap; gap:14px; margin:24px 0 18px; }
+    .button {
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding:15px 24px;
+      border-radius:16px;
+      text-decoration:none;
+      font-weight:800;
+      transition:.2s ease;
+    }
+    .button.primary { background: var(--blue); color: white; box-shadow: var(--shadow); }
+    .button.primary:hover { background: var(--blue-dark); transform: translateY(-1px); }
+    .button.secondary { background: rgba(255,255,255,.78); color: var(--ink); border:1px solid rgba(255,255,255,.8); }
+    .pill-row { display:flex; flex-wrap:wrap; gap:10px; margin-top:16px; }
+    .pill {
+      padding:8px 12px;
+      border-radius:999px;
+      background: rgba(255,255,255,.76);
+      border:1px solid rgba(255,255,255,.85);
+      color: var(--muted);
+      font-size:.95rem;
+    }
+    .card {
+      background: var(--cream);
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 28px;
+    }
+    .hero-image, .about-image {
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      border:1px solid var(--line);
+      aspect-ratio: 4 / 4.2;
+    }
+    .hero-image img, .about-image img { width:100%; height:100%; object-fit:cover; }
+    .product-grid { display:grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
+    .product-card {
+      background: var(--cream);
+      border:1px solid var(--line);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .product-card img { width:100%; aspect-ratio: 4/3; object-fit: cover; }
+    .product-body { padding: 24px; }
+    .price { font-size: 2.2rem; font-weight: 900; margin: 8px 0 12px; }
+    footer { padding: 28px 0 56px; text-align:center; color: var(--muted); font-size:.95rem; }
+    @media (max-width: 980px) {
+      .hero-grid, .about-grid, .product-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 720px) {
+      section { padding: 62px 0; }
+      .card, .product-body { padding: 20px; }
+      h1 { max-width: none; }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="eyebrow">Welcome</div>
+        <h1>Curiosity-Driven Learning</h1>
+        <p class="lead">Helping families turn curiosity into real learning — with AI as support, not replacement.</p>
+        <p class="muted"><strong>by Josh Dates — former teacher, homeschool dad</strong></p>
+        <div class="cta-row">
+          <a class="button primary" href="https://curiositydrivenlearning.com/ebook">Explore the Ebook</a>
+          <a class="button secondary" href="https://curiositydrivenlearning.com/kit">See the Learning Kit</a>
+        </div>
+        <div class="pill-row">
+          <span class="pill">Warm, practical support</span>
+          <span class="pill">Curiosity first</span>
+          <span class="pill">AI as helper, not replacement</span>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="https://images.unsplash.com/photo-1758687126482-4b4b35926f33?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Family learning together" />
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section-alt">
+      <div class="wrap about-grid">
+        <div class="card">
+          <div class="eyebrow">About</div>
+          <h2>A simpler, more human way to learn at home</h2>
+          <p>I’m Josh Dates — a former teacher and homeschool dad who cares deeply about helping families keep learning alive, connected, and meaningful. I built Curiosity-Driven Learning to give parents practical tools that support wonder, deeper thinking, and real-world learning without recreating school at home.</p>
+          <p class="muted">AI can be useful, but only when it stays in the right role. Around here, it supports the process — it doesn’t replace the relationship.</p>
+        </div>
+        <div class="about-image">
+          <img src="https://images.unsplash.com/photo-1609220136736-443140cffec6?w=900" alt="Family outdoors learning in nature" />
+        </div>
+      </div>
+    </section>
+
+    <section class="section-soft">
+      <div class="wrap">
+        <div class="eyebrow">Start Here</div>
+        <h2>Four simple ways to go deeper</h2>
+        <p class="lead">Whether you want a low-cost entry point, a custom AI helper, or the full toolkit, these are the best places to begin.</p>
+        <div class="product-grid">
+          <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1596495578065-6e0763fa1178?w=900" alt="Curious child learning" />
+            <div class="product-body">
+              <h3>The Curiosity-Driven Classroom Ebook</h3>
+              <p class="muted">A short, practical guide to using AI in curiosity-driven learning without adding more pressure or more screen dependence.</p>
+              <div class="price">$7</div>
+              <a class="button primary" href="https://curiositydrivenlearning.com/ebook">Go to /ebook</a>
+            </div>
+          </div>
+          <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1546410531-bb4caa6b424d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGVhcm5pbmd8ZW58MHx8MHx8fDA%3D" alt="Hands-on family learning" />
+            <div class="product-body">
+              <h3>AI-Powered Curiosity Learning Kit</h3>
+              <p class="muted">A fuller system of prompts, activities, guides, and tools to help families turn curiosity into projects, conversations, and real learning rhythm.</p>
+              <div class="price">$29</div>
+              <a class="button primary" href="https://curiositydrivenlearning.com/kit">Go to /kit</a>
+            </div>
+          </div>
+          <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?w=900&auto=format&fit=crop&q=60" alt="Parent planning learning with AI support" />
+            <div class="product-body">
+              <h3>Curiosity Coach</h3>
+              <p class="muted">A custom AI assistant trained on your framework that helps parents turn their kid’s curiosity into real learning plans.</p>
+              <div class="price">$19</div>
+              <a class="button primary" href="https://link.fastpaydirect.com/payment-link/69b8714f942c7dd36efd0a22">Buy Curiosity Coach</a>
+            </div>
+          </div>
+          <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=900&auto=format&fit=crop&q=60" alt="Bundle for family learning tools" />
+            <div class="product-body">
+              <h3>Kit + Coach Bundle</h3>
+              <p class="muted">Get the full Learning Kit plus Curiosity Coach together and save $9 versus buying them separately.</p>
+              <div class="price">$39</div>
+              <a class="button primary" href="https://link.fastpaydirect.com/payment-link/69b8719b942c7dd36efd0a24">Buy the Bundle</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-alt">
+      <div class="wrap">
+        <div class="card">
+          <div class="eyebrow">Coming Soon</div>
+          <h2>A community for families building a different kind of learning life</h2>
+          <p>I’m also building a community for parents who want more than curriculum and more than chaos — a place for curiosity-led families to share ideas, get support, and build a richer learning culture together.</p>
+          <p class="muted">It’s still taking shape, but that’s where this is heading: practical tools, thoughtful support, and a real community around curiosity-driven family learning.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    Josh Dates • curiositydrivenlearning.com
+  </footer>
+</body>
+</html>
