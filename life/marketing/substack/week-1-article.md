@@ -169,4 +169,4 @@ Then take it.
 
 If you want help using ChatGPT that way, I put together a simple guide for homeschool and unschool families.
 
-You can get the $7 ebook here: https://curiositydrivenlearning.com
+You can get the $7 ebook here: https://curiositydrivenlearning.com/ebook
