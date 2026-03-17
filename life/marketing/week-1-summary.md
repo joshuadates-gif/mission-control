@@ -2,11 +2,11 @@
 
 ## Files created
 - `life/marketing/instagram/week-1/post-1-caption.txt` — Faceless tip post on 3 signs a child’s curiosity is signaling a deeper learning path.
-- `life/marketing/instagram/week-1/post-1-image-prompt.txt` — Manual image-generation prompt for post 1.
+- `life/marketing/instagram/week-1/post-1-image-direction.txt` — Image direction for post 1 using a real Josh photo of curiosity tools or nature-study objects.
 - `life/marketing/instagram/week-1/post-2-caption.txt` — Faceless tip post on using ChatGPT as a homeschool support tool without letting it take over.
-- `life/marketing/instagram/week-1/post-2-image-prompt.txt` — Manual image-generation prompt for post 2.
+- `life/marketing/instagram/week-1/post-2-image-direction.txt` — Image direction for post 2 using a real Josh photo of a laptop-supported homeschool table setup.
 - `life/marketing/instagram/week-1/post-3-caption.txt` — Faceless reflective/quote-style post about protecting the spark of curiosity.
-- `life/marketing/instagram/week-1/post-3-image-prompt.txt` — Manual image-generation prompt for post 3.
+- `life/marketing/instagram/week-1/post-3-image-direction.txt` — Image direction for post 3 as a Canva quote card.
 - `life/marketing/instagram/week-1/post-4-caption.txt` — Personal story post inspired by the Sedona “Outer Limits” photo with Jonah and Noa.
 - `life/marketing/instagram/week-1/post-4-photo-direction.txt` — Photo direction for the Sedona trail sign image.
 - `life/marketing/instagram/week-1/post-5-caption.txt` — Personal story post about why Josh and Marlena chose homeschooling for Jonah and Noa.

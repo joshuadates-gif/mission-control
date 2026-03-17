@@ -15,9 +15,16 @@ Every Monday, Josh sends: "Run weekly content batch — Week [X]"
 ### Instagram (5 posts)
 Post 1–3: Faceless — tip, quote, or carousel idea
  - Write caption (150–200 words + 5 hashtags)
- - Generate a DALL-E image: warm, illustrated, cozy homeschool vibe, no real people
- - Save image to: life/marketing/instagram/week-[X]/post-[N]-image.png
+ - Use a mix of three image types:
+   1. Josh's own photos — hands, objects, kids from behind, nature details — no faces required
+   2. Free stock from Unsplash or Pexels
+   3. Canva quote cards for strong one-liner or reflective posts
+ - For each faceless post, specify which image type fits best and include a one-line direction:
+   - Unsplash/Pexels search term
+   - Canva quote text
+   - or a description of the real photo to find
  - Save caption to: life/marketing/instagram/week-[X]/post-[N]-caption.txt
+ - Save image direction to: life/marketing/instagram/week-[X]/post-[N]-image-direction.txt
 
 Post 4–5: Personal — Josh's face/story
  - Write caption (personal, first-person, story-driven, 150–200 words + 5 hashtags)
