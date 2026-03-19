@@ -116,6 +116,15 @@
     .product-card img { width:100%; aspect-ratio: 4/3; object-fit: cover; }
     .product-body { padding: 24px; }
     .price { font-size: 2.2rem; font-weight: 900; margin: 8px 0 12px; }
+    .bonus-card {
+      background: linear-gradient(135deg, rgba(255,240,217,.9) 0%, rgba(244,240,255,.92) 52%, rgba(238,246,255,.95) 100%);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 32px;
+    }
+    .bonus-list { margin: 20px 0 26px; padding-left: 20px; color: var(--muted); }
+    .bonus-list li { margin-bottom: 10px; }
     footer { padding: 28px 0 56px; text-align:center; color: var(--muted); font-size:.95rem; }
     @media (max-width: 980px) {
       .hero-grid, .about-grid, .product-grid { grid-template-columns: 1fr; }
@@ -222,6 +231,22 @@
         </div>
       </div>
     </section>
+
+    <section>
+      <div class="wrap">
+        <div class="bonus-card">
+          <div class="eyebrow">Bonus Freebie</div>
+          <h2>🎨 FREE Bonus: Curiosity Coloring Page Creator</h2>
+          <p class="lead">Type any topic your child is curious about and instantly get a printable coloring page with a fun learning fact — free, forever.</p>
+          <ul class="bonus-list">
+            <li>Works on ANY topic — animals, space, dinosaurs, food, and more</li>
+            <li>Generates a ready-to-print PDF in seconds</li>
+            <li>Completely free — no signup required</li>
+          </ul>
+          <a class="button primary" href="https://chatgpt.com/g/g-69bc26bc8a9881919930eb5f492430f9-curiosity-coloring-pages" target="_blank" rel="noopener noreferrer">Try the Free Coloring Page Creator →</a>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer>
@@ -229,6 +254,3 @@
   </footer>
 </body>
 </html>
->
-</html>
->
