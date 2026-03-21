@@ -3,254 +3,346 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Curiosity-Driven Learning</title>
-  <meta name="description" content="Helping families turn curiosity into real learning — with AI as support, not replacement." />
+  <title>Mission Control</title>
   <style>
     :root {
-      --bg: #f7f4ee;
-      --cream: #fffdf9;
-      --ink: #1f2937;
-      --muted: #5b6472;
-      --blue: #2563eb;
-      --blue-dark: #1d4ed8;
-      --gold: #d97706;
-      --gold-soft: #fff0d9;
-      --mint: #ebf8f2;
-      --lav: #f4f0ff;
-      --line: #e7dfd3;
-      --shadow: 0 18px 45px rgba(15,23,42,.08);
-      --shadow-lg: 0 28px 70px rgba(15,23,42,.12);
-      --max: 1160px;
-      --radius: 28px;
+      --bg: #0b1220;
+      --panel: #121a2b;
+      --panel-2: #182235;
+      --text: #e6edf7;
+      --muted: #93a4bd;
+      --green: #2ecc71;
+      --yellow: #f1c40f;
+      --red: #ff5c5c;
+      --gray: #7f8c8d;
+      --blue: #5dade2;
+      --border: #24324a;
     }
     * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
     body {
       margin: 0;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      color: var(--ink);
-      background: linear-gradient(180deg, #f7f4ee 0%, #fcfaf6 100%);
-      line-height: 1.6;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: linear-gradient(180deg, #09101c 0%, #0b1220 100%);
+      color: var(--text);
+      line-height: 1.45;
     }
-    img { max-width: 100%; display: block; }
-    .wrap { width: min(var(--max), calc(100% - 28px)); margin: 0 auto; }
-    section { padding: 84px 0; }
-    .section-alt { background: rgba(255,255,255,.45); }
-    .section-soft { background: linear-gradient(180deg, rgba(255,240,217,.45) 0%, rgba(255,255,255,.2) 100%); }
-    .eyebrow {
-      display: inline-block;
-      font-size: 12px;
+    .wrap { max-width: 1280px; margin: 0 auto; padding: 24px; }
+    .hero, .card {
+      background: rgba(18, 26, 43, 0.95);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.22);
+    }
+    .hero { padding: 28px; margin-bottom: 20px; }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 { font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 8px; }
+    h2 { font-size: 1.1rem; color: #f4f7fb; margin-bottom: 14px; }
+    .subtle, .muted { color: var(--muted); }
+    .mission { font-size: 1.05rem; max-width: 860px; }
+    .hero-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .countdown {
+      min-width: 250px;
+      background: rgba(241, 196, 15, 0.1);
+      border: 1px solid rgba(241, 196, 15, 0.25);
+      border-radius: 16px;
+      padding: 16px;
+      text-align: right;
+    }
+    .countdown .days {
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
       font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: .14em;
-      padding: 8px 12px;
-      border-radius: 999px;
-      background: rgba(217,119,6,.12);
-      color: var(--gold);
-      margin-bottom: 18px;
+      color: var(--yellow);
+      line-height: 1;
+      margin-bottom: 6px;
     }
-    h1,h2,h3 { line-height: 1.05; margin: 0 0 16px; }
-    h1 { font-size: clamp(2.8rem, 5.8vw, 5rem); font-weight: 900; letter-spacing: -0.04em; max-width: 10ch; }
-    h2 { font-size: clamp(2rem, 3vw, 3rem); }
-    h3 { font-size: 1.25rem; }
-    p { margin: 0 0 14px; }
-    .muted { color: var(--muted); }
-    .lead { font-size: 1.16rem; color: var(--muted); max-width: 760px; }
-    .hero {
-      padding: 92px 0 68px;
-      background:
-        radial-gradient(circle at 15% 12%, rgba(255,255,255,.35), transparent 26%),
-        radial-gradient(circle at 90% 10%, rgba(59,130,246,.16), transparent 25%),
-        radial-gradient(circle at 70% 30%, rgba(217,119,6,.16), transparent 28%),
-        linear-gradient(135deg, #fff2df 0%, #f6f0ff 48%, #eef6ff 100%);
-      overflow: hidden;
-    }
-    .hero-grid, .about-grid { display:grid; grid-template-columns: 1.05fr .95fr; gap: 30px; align-items: center; }
-    .cta-row { display:flex; flex-wrap:wrap; gap:14px; margin:24px 0 18px; }
-    .button {
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:10px;
-      padding:15px 24px;
-      border-radius:16px;
-      text-decoration:none;
-      font-weight:800;
-      transition:.2s ease;
-    }
-    .button.primary { background: var(--blue); color: white; box-shadow: var(--shadow); }
-    .button.primary:hover { background: var(--blue-dark); transform: translateY(-1px); }
-    .button.secondary { background: rgba(255,255,255,.78); color: var(--ink); border:1px solid rgba(255,255,255,.8); }
-    .pill-row { display:flex; flex-wrap:wrap; gap:10px; margin-top:16px; }
+    .grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 18px; }
+    .card { padding: 20px; }
+    .span-12 { grid-column: span 12; }
+    .span-8 { grid-column: span 8; }
+    .span-6 { grid-column: span 6; }
+    .span-4 { grid-column: span 4; }
     .pill {
-      padding:8px 12px;
-      border-radius:999px;
-      background: rgba(255,255,255,.76);
-      border:1px solid rgba(255,255,255,.85);
-      color: var(--muted);
-      font-size:.95rem;
+      display: inline-block; padding: 5px 10px; border-radius: 999px; font-size: 0.82rem;
+      font-weight: 700; margin-right: 8px; margin-bottom: 8px; border: 1px solid transparent;
     }
-    .card {
-      background: var(--cream);
-      border:1px solid var(--line);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding: 28px;
+    .green { background: rgba(46, 204, 113, 0.12); color: var(--green); border-color: rgba(46, 204, 113, 0.28); }
+    .yellow { background: rgba(241, 196, 15, 0.12); color: var(--yellow); border-color: rgba(241, 196, 15, 0.28); }
+    .red { background: rgba(255, 92, 92, 0.12); color: var(--red); border-color: rgba(255, 92, 92, 0.28); }
+    .gray { background: rgba(127, 140, 141, 0.13); color: #c0c8cf; border-color: rgba(127, 140, 141, 0.28); }
+    .blue { background: rgba(93, 173, 226, 0.12); color: var(--blue); border-color: rgba(93, 173, 226, 0.28); }
+    .stat {
+      display: flex; align-items: baseline; justify-content: space-between; gap: 16px; padding: 10px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
     }
-    .hero-image, .about-image {
-      border-radius: 28px;
-      overflow: hidden;
-      box-shadow: var(--shadow-lg);
-      border:1px solid var(--line);
-      aspect-ratio: 4 / 4.2;
+    .stat:last-child { border-bottom: none; }
+    .stat .label { color: var(--muted); }
+    .project {
+      border: 1px solid rgba(255,255,255,0.06); border-radius: 14px; padding: 16px;
+      margin-bottom: 14px; background: rgba(255,255,255,0.02);
     }
-    .hero-image img, .about-image img { width:100%; height:100%; object-fit:cover; }
-    .product-grid { display:grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
-    .product-card {
-      background: var(--cream);
-      border:1px solid var(--line);
-      border-radius: 28px;
-      box-shadow: var(--shadow);
-      overflow: hidden;
+    ul.checks { list-style: none; padding-left: 0; margin: 10px 0 0; }
+    ul.checks li { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
+    th, td {
+      text-align: left; padding: 10px 8px; border-bottom: 1px solid rgba(255,255,255,0.07); vertical-align: top;
     }
-    .product-card img { width:100%; aspect-ratio: 4/3; object-fit: cover; }
-    .product-body { padding: 24px; }
-    .price { font-size: 2.2rem; font-weight: 900; margin: 8px 0 12px; }
-    .bonus-card {
-      background: linear-gradient(135deg, rgba(255,240,217,.9) 0%, rgba(244,240,255,.92) 52%, rgba(238,246,255,.95) 100%);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding: 32px;
+    th { color: #cfd8e6; font-weight: 700; }
+    .small { font-size: 0.88rem; }
+    .log-item {
+      display: grid; grid-template-columns: 170px 1fr 130px; gap: 12px; padding: 10px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
     }
-    .bonus-list { margin: 20px 0 26px; padding-left: 20px; color: var(--muted); }
-    .bonus-list li { margin-bottom: 10px; }
-    footer { padding: 28px 0 56px; text-align:center; color: var(--muted); font-size:.95rem; }
-    @media (max-width: 980px) {
-      .hero-grid, .about-grid, .product-grid { grid-template-columns: 1fr; }
-    }
-    @media (max-width: 720px) {
-      section { padding: 62px 0; }
-      .card, .product-body { padding: 20px; }
-      h1 { max-width: none; }
+    .log-item:last-child { border-bottom: none; }
+    code.inline { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px; }
+    @media (max-width: 900px) {
+      .span-8, .span-6, .span-4 { grid-column: span 12; }
+      .log-item { grid-template-columns: 1fr; }
+      .countdown { text-align: left; width: 100%; }
     }
   </style>
 </head>
 <body>
-  <header class="hero">
-    <div class="wrap hero-grid">
-      <div>
-        <div class="eyebrow">Welcome</div>
-        <h1>Curiosity-Driven Learning</h1>
-        <p class="lead">Helping families turn curiosity into real learning — with AI as support, not replacement.</p>
-        <p class="muted"><strong>by Josh Dates — former teacher, homeschool dad</strong></p>
-        <div class="cta-row">
-          <a class="button primary" href="https://curiositydrivenlearning.com/ebook">Explore the Ebook</a>
-          <a class="button secondary" href="https://curiositydrivenlearning.com/kit">See the Learning Kit</a>
+  <!-- Public-safe dashboard. Edit the commented data blocks below. -->
+  <div class="wrap">
+    <section class="hero">
+      <!-- HEADER DATA START -->
+      <div class="hero-top">
+        <div>
+          <div class="pill blue">Mission Control</div>
+          <div class="pill green">ONLINE</div>
+          <div class="pill blue">AUTO-UPDATE ACTIVE</div>
+          <div class="pill blue"><a href="products.html" style="color:inherit;text-decoration:none;">PRODUCT FILES</a></div>
+          <h1>Mission Control — Josh</h1>
+          <p class="subtle">Updated: <span id="updated-date">2026-03-21 09:29 UTC</span></p>
+          <p class="mission">Build a location-independent, AI-leveraged business ecosystem that supports Josh’s family freedom and worldschooling life through curiosity-driven, polymath-style learning.</p>
         </div>
-        <div class="pill-row">
-          <span class="pill">Warm, practical support</span>
-          <span class="pill">Curiosity first</span>
-          <span class="pill">AI as helper, not replacement</span>
-        </div>
-      </div>
-      <div class="hero-image">
-        <img src="https://images.unsplash.com/photo-1758687126482-4b4b35926f33?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Family learning together" />
-      </div>
-    </div>
-  </header>
-
-  <main>
-    <section class="section-alt">
-      <div class="wrap about-grid">
-        <div class="card">
-          <div class="eyebrow">About</div>
-          <h2>A simpler, more human way to learn at home</h2>
-          <p>I’m Josh Dates — a former teacher and homeschool dad who cares deeply about helping families keep learning alive, connected, and meaningful. I built Curiosity-Driven Learning to give parents practical tools that support wonder, deeper thinking, and real-world learning without recreating school at home.</p>
-          <p class="muted">AI can be useful, but only when it stays in the right role. Around here, it supports the process — it doesn’t replace the relationship.</p>
-        </div>
-        <div class="about-image">
-          <img src="https://images.unsplash.com/photo-1609220136736-443140cffec6?w=900" alt="Family outdoors learning in nature" />
+        <div class="countdown">
+          <div class="days">IN BUILD</div>
+          <div><strong>OURSPACE MVP</strong></div>
+          <div class="small muted">Milestone date: TBD</div>
         </div>
       </div>
+      <!-- HEADER DATA END -->
     </section>
 
-    <section class="section-soft">
-      <div class="wrap">
-        <div class="eyebrow">Start Here</div>
-        <h2>Four simple ways to go deeper</h2>
-        <p class="lead">Whether you want a low-cost entry point, a custom AI helper, or the full toolkit, these are the best places to begin.</p>
-        <div class="product-grid">
-          <div class="product-card">
-            <img src="https://images.unsplash.com/photo-1596495578065-6e0763fa1178?w=900" alt="Curious child learning" />
-            <div class="product-body">
-              <h3>The Curiosity-Driven Classroom Ebook</h3>
-              <p class="muted">A short, practical guide to using AI in curiosity-driven learning without adding more pressure or more screen dependence.</p>
-              <div class="price">$7</div>
-              <a class="button primary" href="https://curiositydrivenlearning.com/ebook">Get the Ebook for $7</a>
-            </div>
-          </div>
-          <div class="product-card">
-            <img src="https://images.unsplash.com/photo-1546410531-bb4caa6b424d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGVhcm5pbmd8ZW58MHx8MHx8fDA%3D" alt="Hands-on family learning" />
-            <div class="product-body">
-              <h3>AI-Powered Curiosity Learning Kit</h3>
-              <p class="muted">A fuller system of prompts, activities, guides, and tools to help families turn curiosity into projects, conversations, and real learning rhythm.</p>
-              <div class="price">$29</div>
-              <a class="button primary" href="https://curiositydrivenlearning.com/kit">Get the Learning Kit</a>
-            </div>
-          </div>
-          <div class="product-card">
-            <img src="https://media.istockphoto.com/id/2243455897/photo/preteen-girl-at-desk-solving-homework-with-ai-chatbot.webp?a=1&b=1&s=612x612&w=0&k=20&c=cDUS-d1h3R5YkvICftpQRJQ7Ocpb9l1DWGP80vlVP5Y=" alt="Preteen girl using an AI chatbot for learning support" />
-            <div class="product-body">
-              <h3>Curiosity Coach</h3>
-              <p class="muted">A custom AI assistant trained on your framework that helps parents turn their kid’s curiosity into real learning plans.</p>
-              <div class="price">$19</div>
-              <a class="button primary" href="https://link.fastpaydirect.com/payment-link/69b8714f942c7dd36efd0a22">Get Curiosity Coach</a>
-            </div>
-          </div>
-          <div class="product-card">
-            <img src="https://plus.unsplash.com/premium_photo-1661779153960-c8778734dd34?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fGxlYXJuaW5nJTIwdG9vbHMlMjBzdGFjayUyMGFuZCUyMGNvbXB1dGVyfGVufDB8fDB8fHww" alt="Learning tools bundle with computer" />
-            <div class="product-body">
-              <h3>Kit + Coach Bundle</h3>
-              <p class="muted">Get the full Learning Kit plus Curiosity Coach together and save $9 versus buying them separately.</p>
-              <div class="price">$39</div>
-              <a class="button primary" href="https://link.fastpaydirect.com/payment-link/69b8719b942c7dd36efd0a24">Get the Bundle & Save $9</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <section class="grid">
+      <article class="card span-4">
+        <h2>My Status</h2>
+        <!-- MY STATUS DATA START -->
+        <div class="stat"><span class="label">Current focus</span><strong>OurSpace MVP — private family memory app with TV Mode as the core wedge</strong></div>
+        <div class="stat"><span class="label">Current blockers</span><strong>Need final product scope discipline and Supabase setup / deployment follow-through</strong></div>
+        <div class="stat"><span class="label">Decisions needed now</span><strong>Confirm MVP boundary, first-user test plan, and whether Curiosity products remain active offers or move to background maintenance</strong></div>
+        <!-- MY STATUS DATA END -->
+      </article>
 
-    <section class="section-alt">
-      <div class="wrap">
-        <div class="card">
-          <div class="eyebrow">Coming Soon</div>
-          <h2>A community for families building a different kind of learning life</h2>
-          <p>I’m also building a community for parents who want more than curriculum and more than chaos — a place for curiosity-led families to share ideas, get support, and build a richer learning culture together.</p>
-          <p class="muted">It’s still taking shape, but that’s where this is heading: practical tools, thoughtful support, and a real community around curiosity-driven family learning.</p>
-        </div>
-      </div>
-    </section>
+      <article class="card span-4">
+        <h2>Revenue Tracker</h2>
+        <!-- REVENUE TRACKER DATA START -->
+        <div class="stat"><span class="label">Monthly target</span><strong>$20,000/month</strong></div>
+        <div class="stat"><span class="label">Current revenue</span><strong>$0.00 (checkout live, no recorded sales yet)</strong></div>
+        <table>
+          <thead>
+            <tr><th>Product</th><th>Revenue</th><th>Status</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>AI-Powered Curiosity Learning Kit ($29)</td><td>$0.00</td><td><span class="pill green">LIVE</span></td></tr>
+            <tr><td>The Curiosity-Driven Classroom ebook ($7)</td><td>$0.00</td><td><span class="pill green">LIVE</span></td></tr>
+            <tr><td>Future membership / community</td><td>$0.00</td><td><span class="pill gray">PLACEHOLDER</span></td></tr>
+          </tbody>
+        </table>
+        <!-- REVENUE TRACKER DATA END -->
+      </article>
 
-    <section>
-      <div class="wrap">
-        <div class="bonus-card">
-          <div class="eyebrow">Bonus Freebie</div>
-          <h2>🎨 FREE Bonus: Curiosity Coloring Page Creator</h2>
-          <p class="lead">Type any topic your child is curious about and instantly get a printable coloring page with a fun learning fact — free, forever.</p>
-          <ul class="bonus-list">
-            <li>Works on ANY topic — animals, space, dinosaurs, food, and more</li>
-            <li>Generates a ready-to-print PDF in seconds</li>
-            <li>Completely free — no signup required</li>
+      <article class="card span-4">
+        <h2>Agent Status</h2>
+        <!-- AGENT STATUS DATA START -->
+        <div class="stat"><span class="label">Model</span><strong>openai-codex/gpt-5.4</strong></div>
+        <div class="stat"><span class="label">Capabilities</span><strong>search, shell, git, memory, scheduling, sub-agents, docs/files</strong></div>
+        <div class="stat"><span class="label">Last active</span><strong>2026-03-21 09:29 UTC</strong></div>
+        <div class="stat"><span class="label">Status</span><strong class="green">OPERATIONAL</strong></div>
+        <!-- AGENT STATUS DATA END -->
+      </article>
+
+      <article class="card span-12">
+        <h2>Org Structure</h2>
+        <!-- ORG STRUCTURE DATA START -->
+        <table>
+          <thead>
+            <tr><th>Role</th><th>Function</th><th>Status</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Josh (Boss)</td><td>Vision, final decisions, product direction</td><td><span class="pill green">ACTIVE</span></td></tr>
+            <tr><td>Bodhi (AI Agent — openai-codex/gpt-5.4)</td><td>Strategy, operating system, execution support, dashboard management</td><td><span class="pill green">OPERATIONAL</span></td></tr>
+            <tr><td>OpenRouter sub-agents</td><td>Configured for delegated tasks and parallel execution</td><td><span class="pill green">CONFIGURED</span></td></tr>
+          </tbody>
+        </table>
+        <!-- ORG STRUCTURE DATA END -->
+      </article>
+
+      <article class="card span-8">
+        <h2>Active Projects</h2>
+        <!-- ACTIVE PROJECTS DATA START -->
+        <div class="project">
+          <div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;">
+            <div>
+              <h3>OurSpace MVP</h3>
+              <p class="muted">New active build: a private, invite-only family memory app with TV Mode as the emotional wedge. React/Vite app scaffolded and core Supabase-backed flows mapped.</p>
+            </div>
+            <div><span class="pill yellow">IN PROGRESS</span><span class="pill red">HIGH</span></div>
+          </div>
+          <p class="small muted">Deadline: Not fixed</p>
+          <ul class="checks">
+            <li>☑ Product direction documented</li>
+            <li>☑ MVP scope defined</li>
+            <li>☑ App shell scaffolded</li>
+            <li>☑ Auth/session foundation wired</li>
+            <li>☑ Circle creation and join flows added</li>
+            <li>☑ Photo upload, feed, comments, and reactions added</li>
+            <li>☑ TV Mode slideshow working with live clock/date</li>
+            <li>☐ Complete Supabase production setup</li>
+            <li>☐ Run first real family test</li>
+            <li>☐ Decide deployment path</li>
           </ul>
-          <a class="button primary" href="https://chatgpt.com/g/g-69bc26bc8a9881919930eb5f492430f9-curiosity-coloring-pages" target="_blank" rel="noopener noreferrer">Try the Free Coloring Page Creator →</a>
         </div>
-      </div>
-    </section>
-  </main>
 
-  <footer>
-    Josh Dates • curiositydrivenlearning.com
-  </footer>
+        <div class="project">
+          <div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;">
+            <div>
+              <h3>Curiosity Learning Offers</h3>
+              <p class="muted">Existing digital products remain live and public-safe, but active build focus has shifted. These now sit in maintenance / monetization mode until Josh decides whether to keep pushing them.</p>
+            </div>
+            <div><span class="pill yellow">MAINTENANCE</span><span class="pill yellow">MEDIUM</span></div>
+          </div>
+          <p class="small muted">Deadline: Not set</p>
+          <ul class="checks">
+            <li>☑ AI-Powered Curiosity Learning Kit live at $29</li>
+            <li>☑ Curiosity-Driven Classroom ebook live at $7</li>
+            <li>☑ Checkout and delivery previously confirmed working</li>
+            <li>☑ Added bonus freebie section to landing pages on 2026-03-19</li>
+            <li>☑ Marketing assets exist in workspace</li>
+            <li>☐ Decide whether to resume audience-growth push now or later</li>
+          </ul>
+        </div>
+
+        <div class="project">
+          <div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;">
+            <div>
+              <h3>Mission Control Dashboard</h3>
+              <p class="muted">Maintain the command center for goals, projects, decisions, revenue, activity, and system health.</p>
+            </div>
+            <div><span class="pill green">COMPLETE</span><span class="pill yellow">MEDIUM</span></div>
+          </div>
+          <p class="small muted">Deadline: 2026-03-13</p>
+          <ul class="checks">
+            <li>☑ Single-page dashboard designed</li>
+            <li>☑ GitHub Pages deployment working</li>
+            <li>☑ Revenue tracker added</li>
+            <li>☑ Countdown added</li>
+            <li>☑ Org structure added</li>
+          </ul>
+        </div>
+        <!-- ACTIVE PROJECTS DATA END -->
+      </article>
+
+      <article class="card span-4">
+        <h2>Decisions Needed</h2>
+        <!-- DECISIONS DATA START -->
+        <div class="project">
+          <strong>Lock OurSpace MVP boundary</strong>
+          <p class="muted small">Priority: HIGH · Created: 2026-03-20 · Waiting: 1 day</p>
+          <p class="small">Keep v1 focused on auth, private circles, photo feed, reactions/comments, and TV Mode. Explicitly defer feature creep.</p>
+        </div>
+        <div class="project">
+          <strong>Choose deployment + backend completion path</strong>
+          <p class="muted small">Priority: HIGH · Created: 2026-03-20 · Waiting: 1 day</p>
+          <p class="small">Finish Supabase configuration and decide the first public/demo deployment path so the app can move from scaffold to real use.</p>
+        </div>
+        <div class="project">
+          <strong>Decide active offer stack vs background maintenance</strong>
+          <p class="muted small">Priority: MEDIUM · Created: 2026-03-21 · Waiting: 0 days</p>
+          <p class="small">Clarify whether the live curiosity products should continue receiving marketing effort while OurSpace becomes the main build focus.</p>
+        </div>
+        <!-- DECISIONS DATA END -->
+      </article>
+
+      <article class="card span-12">
+        <h2>Activity Log</h2>
+        <!-- ACTIVITY LOG DATA START -->
+        <div class="log-item"><div class="muted small">2026-03-21 09:29 UTC</div><div>Ran scheduled Mission Control refresh: updated timestamp, runtime snapshot, disk health, docker-unavailable status, API usage, and current project state to reflect the OurSpace pivot.</div><div><span class="pill green">COMPLETED</span></div></div>
+        <div class="log-item"><div class="muted small">2026-03-20 UTC</div><div>Shifted active build focus to OurSpace, documented product direction and MVP plan, scaffolded the React/Vite app, added auth/circle/feed flows, and built TV Mode with Supabase-backed foundations.</div><div><span class="pill green">COMPLETED</span></div></div>
+        <div class="log-item"><div class="muted small">2026-03-19 UTC</div><div>Added the Curiosity Coloring Page Creator bonus freebie section to the live landing pages for the curiosity offers.</div><div><span class="pill green">COMPLETED</span></div></div>
+        <div class="log-item"><div class="muted small">2026-03-17 00:41 UTC</div><div>Shipped a new Substack page and published the first article, joined 3 homeschool Facebook groups, posted twice on Facebook and once on Instagram, created Curiosity Coach, and added the new offer to sales pages.</div><div><span class="pill green">COMPLETED</span></div></div>
+        <div class="log-item"><div class="muted small">2026-03-15 15:29 UTC</div><div>Ran scheduled Mission Control refresh: updated runtime snapshot, timestamp, disk health, current Pages deployment state, and recent GHL ebook page activity.</div><div><span class="pill green">COMPLETED</span></div></div>
+        <div class="log-item"><div class="muted small">2026-03-15 15:08 UTC</div><div>Fixed the GHL ebook hero image and confirmed the live GitHub Pages build for the latest page revision.</div><div><span class="pill green">COMPLETED</span></div></div>
+        <div class="log-item"><div class="muted small">2026-03-15 09:30 UTC</div><div>Ran scheduled Mission Control refresh: updated runtime snapshot, timestamp, disk health, and current container availability limits.</div><div><span class="pill green">COMPLETED</span></div></div>
+        <div class="log-item"><div class="muted small">2026-03-14 03:29 UTC</div><div>Ran scheduled Mission Control refresh: updated runtime snapshot, timestamp, and current system health state.</div><div><span class="pill green">COMPLETED</span></div></div>
+        <div class="log-item"><div class="muted small">2026-03-13 21:29 UTC</div><div>Ran scheduled Mission Control refresh: updated runtime snapshot, timestamp, and product review pages for final sales assets.</div><div><span class="pill green">COMPLETED</span></div></div>
+        <div class="log-item"><div class="muted small">2026-03-13 15:29 UTC</div><div>Ran scheduled Mission Control refresh: updated runtime snapshot, timestamp, and product review availability in /workspace/product.</div><div><span class="pill green">COMPLETED</span></div></div>
+        <div class="log-item"><div class="muted small">2026-03-13 09:29 UTC</div><div>Ran scheduled Mission Control refresh: updated timestamp, monthly target, project state, runtime health, and dashboard activity.</div><div><span class="pill green">COMPLETED</span></div></div>
+        <div class="log-item"><div class="muted small">2026-03-13 01:13 UTC</div><div>Updated Mission Control with revenue tracking, countdown, org structure, decision created dates, and corrected cost tracking.</div><div><span class="pill green">COMPLETED</span></div></div>
+        <div class="log-item"><div class="muted small">2026-03-13 01:11 UTC</div><div>Built the product blueprint for the AI-Powered Curiosity Learning Kit.</div><div><span class="pill green">COMPLETED</span></div></div>
+        <div class="log-item"><div class="muted small">2026-03-13 01:08 UTC</div><div>Deployed Mission Control to GitHub Pages.</div><div><span class="pill green">COMPLETED</span></div></div>
+        <div class="log-item"><div class="muted small">2026-03-13 01:07 UTC</div><div>Retried dashboard deployment with updated GitHub token.</div><div><span class="pill green">COMPLETED</span></div></div>
+        <div class="log-item"><div class="muted small">2026-03-13 01:02 UTC</div><div>Saved the first-offer decision: AI-Powered Curiosity Learning Kit.</div><div><span class="pill green">COMPLETED</span></div></div>
+        <div class="log-item"><div class="muted small">2026-03-13 00:09 UTC</div><div>Built Mission Control dashboard and organized deploy-ready files in workspace.</div><div><span class="pill green">COMPLETED</span></div></div>
+        <div class="log-item"><div class="muted small">2026-03-13 00:04 UTC</div><div>Deployment was temporarily blocked by GitHub token permissions.</div><div><span class="pill red">FAILED</span></div></div>
+        <div class="log-item"><div class="muted small">2026-03-13 00:02 UTC</div><div>Captured Josh’s teaching background and existing ebook asset in workspace memory.</div><div><span class="pill green">COMPLETED</span></div></div>
+        <!-- ACTIVITY LOG DATA END -->
+      </article>
+
+      <article class="card span-12">
+        <h2>API Usage & Cost Tracking</h2>
+        <p class="muted small">Only Bodhi’s usage should be tracked here. Codex OAuth is treated as $0.00 under Josh’s subscription. MiniMax Worker rates are listed for future delegation.</p>
+        <!-- API USAGE DATA START -->
+        <table>
+          <thead>
+            <tr><th>Project</th><th>Model Used</th><th>Input Tokens</th><th>Output Tokens</th><th>Est. Cost</th><th>Last Run</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Mission Control Dashboard</td><td>openai-codex/gpt-5.4</td><td>~1.0k</td><td>47</td><td>$0.00</td><td>2026-03-21 09:30 UTC</td></tr>
+            <tr><td>OurSpace build / ops work</td><td>openai-codex/gpt-5.4</td><td>Tracked in session context</td><td>Tracked in session context</td><td>$0.00</td><td>2026-03-20 UTC</td></tr>
+            <tr><td>MiniMax Worker (reserved)</td><td>openrouter/minimax/minimax-m2.5</td><td>0</td><td>0</td><td>$0.00</td><td>Not run</td></tr>
+          </tbody>
+        </table>
+        <div style="margin-top:14px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;">
+          <div class="project"><strong>Total spend this period</strong><p class="small muted">$0.00</p></div>
+          <div class="project"><strong>Budget cap</strong><p class="small muted">ASK JOSH</p></div>
+          <div class="project"><strong>Cost breakdown by model</strong><p class="small muted">Codex OAuth: $0.00 · Current session ~1.0k input / 47 output with ~5.6k cached · MiniMax M2.5 rates: $0.27 / 1M input tokens, $0.95 / 1M output tokens</p></div>
+        </div>
+        <!-- API USAGE DATA END -->
+      </article>
+
+      <article class="card span-6">
+        <h2>System Health</h2>
+        <!-- SYSTEM HEALTH DATA START -->
+        <div class="stat"><span class="label">Server status</span><strong class="green">HEALTHY</strong></div>
+        <div class="stat"><span class="label">Container status</span><strong class="yellow">UNAVAILABLE HERE (docker not installed)</strong></div>
+        <div class="stat"><span class="label">Disk usage</span><strong class="green">26% used · 108G available</strong></div>
+        <div class="stat"><span class="label">Last response timestamp</span><strong>2026-03-21 09:29 UTC</strong></div>
+        <div class="stat"><span class="label">Warnings / limits</span><strong class="yellow">docker checks unavailable in this environment · gateway status limited by missing operator.read scope · reverse proxy headers warning present in openclaw security audit</strong></div>
+        <div class="stat"><span class="label">Auto-update status</span><strong class="green">ACTIVE · every 6 hours</strong></div>
+        <!-- SYSTEM HEALTH DATA END -->
+      </article>
+
+      <article class="card span-6">
+        <h2>Notes / Update Guide</h2>
+        <p class="muted small">Edit <code class="inline">/workspace/mission-control/index.html</code> to update projects, revenue, decisions, activity, or health. All editable sections are clearly commented.</p>
+        <ul class="checks">
+          <li>☑ Public-safe: first name only</li>
+          <li>☑ No secrets exposed</li>
+          <li>☑ Mobile responsive</li>
+          <li>☑ Single-file HTML</li>
+          <li>☑ Monthly target set at $20,000/month</li>
+          <li>☐ Set real budget cap</li>
+        </ul>
+      </article>
+    </section>
+  </div>
 </body>
 </html>
